@@ -425,12 +425,12 @@ class Simplify(Builtin):
      = 1
     >> $Assumptions={};
 
-    The option $ComplexityFunction$ allows to control the way in which the evaluator decides if
-    one expression is simpler than another. For example, by default, $Simplify$ tries to avoid
+    The option $ComplexityFunction$ allows to control the way in which the evaluator decides if one
+    expression is simpler than another. For example, by default, 'Simplify' tries to avoid
     expressions involving numbers with many digits:
     >> Simplify[20 Log[2]]
      = 20 Log[2]
-    This behaviour can be modified by setting ``LeafCount`` as the $ComplexityFunction$
+    This behaviour can be modified by setting 'LeafCount' as the 'ComplexityFunction'
     >> Simplify[20 Log[2], ComplexityFunction->LeafCount]
      = Log[1048576]
     """
