@@ -7,7 +7,7 @@ Enhancements
 * ``SameQ`` (``===``) handles chaining, e.g. ``a == b == c`` or ``SameQ[a, b, c]``
 * ``Simplify`` now has a semantics closer to the WMA, and handles properly expressions of the form
   ``Simplify[0^a]`` (issue #167)
-  
+* ``Simplify`` and ``FullSimplify`` now supports optional parameters ``Assumptions`` and ``ComplexityFunction``  
 
 Documentation
 .............

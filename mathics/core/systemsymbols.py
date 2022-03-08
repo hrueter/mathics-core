@@ -3,6 +3,7 @@
 from mathics.core.symbols import Symbol
 
 # Some other common Symbols. This list is sorted in alphabetic order.
+Symbol_Assumptions = Symbol("$Assumptions")
 SymbolAborted = Symbol("$Aborted")
 SymbolAlternatives = Symbol("Alternatives")
 SymbolAssociation = Symbol("Association")
