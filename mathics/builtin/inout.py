@@ -145,6 +145,7 @@ class TraceEvaluation(Builtin):
     """
 
     attributes = hold_all | protected
+    summary_text = "TraceEvaluation summary still not available"
     options = {
         "System`ShowTimeBySteps": "False",
     }
@@ -191,6 +192,7 @@ class Format(Builtin):
      : Tag f not found or too deep for an assigned rule.
     """
 
+    summary_text = "Format summary still not available"
     messages = {"fttp": "Format type `1` is not a symbol."}
 
 
@@ -566,6 +568,7 @@ class MakeBoxes(Builtin):
 
     attributes = hold_all_complete
 
+    summary_text = "MakeBoxes summary still not available"
     rules = {
         "MakeBoxes[Infix[head_[leaves___]], "
         "    f:StandardForm|TraditionalForm|OutputForm|InputForm]": (
@@ -708,6 +711,8 @@ class ToBoxes(Builtin):
      = SuperscriptBox["a", "b"]
     """
 
+    summary_text = "ToBoxes summary still not available"
+
     def apply(self, expr, form, evaluation):
         "ToBoxes[expr_, form_:StandardForm]"
 
@@ -745,6 +750,8 @@ class Row(Builtin):
         <dd>formats several expressions inside a 'RowBox'.
     </dl>
     """
+
+    summary_text = "Row summary still not available"
 
     def apply_makeboxes(self, items, sep, f, evaluation):
         """MakeBoxes[Row[{items___}, sep_:""],
@@ -796,6 +803,7 @@ class GridBox(BoxConstruct):
     #  = ...
     """
 
+    summary_text = "GridBox summary still not available"
     options = {"ColumnAlignments": "Center"}
 
     def get_array(self, leaves, evaluation):
@@ -931,6 +939,7 @@ class Grid(Builtin):
      . c   d
     """
 
+    summary_text = "Grid summary still not available"
     options = GridBox.options
 
     def apply_makeboxes(self, array, f, evaluation, options) -> Expression:
@@ -995,6 +1004,7 @@ class TableForm(Builtin):
      = #<--#
     """
 
+    summary_text = "TableForm summary still not available"
     options = {"TableDepth": "Infinity"}
 
     def apply_makeboxes(self, table, f, evaluation, options):
@@ -1075,6 +1085,8 @@ class MatrixForm(TableForm):
      . 0     0
     """
 
+    summary_text = "MatrixForm summary still not available"
+
     def apply_makeboxes_matrix(self, table, f, evaluation, options):
         """MakeBoxes[%(name)s[table_, OptionsPattern[%(name)s]],
         f:StandardForm|TraditionalForm]"""
@@ -1098,6 +1110,7 @@ class Superscript(Builtin):
      = x^3
     """
 
+    summary_text = "Superscript summary still not available"
     rules = {
         "MakeBoxes[Superscript[x_, y_], f:StandardForm|TraditionalForm]": (
             "SuperscriptBox[MakeBoxes[x, f], MakeBoxes[y, f]]"
@@ -1115,6 +1128,8 @@ class Subscript(Builtin):
     >> Subscript[x,1,2,3] // TeXForm
      = x_{1,2,3}
     """
+
+    summary_text = "Subscript summary still not available"
 
     def apply_makeboxes(self, x, y, f, evaluation) -> Expression:
         "MakeBoxes[Subscript[x_, y__], f:StandardForm|TraditionalForm]"
@@ -1136,6 +1151,7 @@ class Subsuperscript(Builtin):
      = a_b^c
     """
 
+    summary_text = "Subsuperscript summary still not available"
     rules = {
         "MakeBoxes[Subsuperscript[x_, y_, z_], "
         "f:StandardForm|TraditionalForm]": (
@@ -1287,6 +1303,8 @@ class StringForm(Builtin):
      = a bla b blub c bla b
     """
 
+    summary_text = "StringForm summary still not available"
+
     def apply_makeboxes(self, s, args, f, evaluation):
         """MakeBoxes[StringForm[s_String, args___],
         f:StandardForm|TraditionalForm|OutputForm]"""
@@ -1334,6 +1352,7 @@ class Message(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "Message summary still not available"
     messages = {
         "name": "Message name `1` is not of the form symbol::name or symbol::name::language."
     }
@@ -1428,6 +1447,7 @@ class Check(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "Check summary still not available"
     messages = {
         "argmu": "Check called with 1 argument; 2 or more arguments are expected.",
         "name": "Message name `1` is not of the form symbol::name or symbol::name::language.",
@@ -1529,6 +1549,7 @@ class Quiet(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "Quiet summary still not available"
     messages = {
         "anmlist": (
             "Argument `1` of `2` should be All, None, a message name, "
@@ -1637,6 +1658,8 @@ class Off(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "Off summary still not available"
+
     def apply(self, expr, evaluation):
         "Off[expr___]"
 
@@ -1683,6 +1706,8 @@ class On(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "On summary still not available"
+
     def apply(self, expr, evaluation):
         "On[expr___]"
 
@@ -1723,6 +1748,7 @@ class MessageName(BinaryOperator):
      = MessageName[a, "b"]
     """
 
+    summary_text = "MessageName summary still not available"
     messages = {"messg": "Message cannot be set to `1`. It must be set to a string."}
 
     operator = "::"
@@ -1840,6 +1866,7 @@ class Syntax(Builtin):
     """
 
     # Extension: MMA does not provide lineno and filename in its error messages
+    summary_text = "Syntax summary still not available"
     messages = {
         "snthex": r"4 hexadecimal digits are required after \: to construct a 16-bit character (line `4` of `5`).",
         "sntoct1": r"3 octal digits are required after \ to construct an 8-bit character (line `4` of `5`).",
@@ -1868,6 +1895,7 @@ class General(Builtin):
      : Rule called with 1 argument; 2 arguments are expected.
     """
 
+    summary_text = "General summary still not available"
     messages = {
         "argb": (
             "`1` called with `2` arguments; "
@@ -1960,6 +1988,7 @@ class Echo_(Predefined):
 
     attributes = 0
     name = "$Echo"
+    summary_text = "Echo_ summary still not available"
     rules = {"$Echo": "{}"}
 
 
@@ -1979,6 +2008,8 @@ class Print(Builtin):
      | -Hola
      . -Qué tal?
     """
+
+    summary_text = "Print summary still not available"
 
     def apply(self, expr, evaluation):
         "Print[expr__]"
@@ -2087,6 +2118,8 @@ class MathMLForm(Builtin):
     = ...
     """
 
+    summary_text = "MathMLForm summary still not available"
+
     def apply_mathml(self, expr, evaluation) -> Expression:
         "MakeBoxes[expr_, MathMLForm]"
 
@@ -2135,6 +2168,8 @@ class PythonForm(Builtin):
     # >> PythonForm[HoldForm[Sqrt[a^3]]]
     #  = sympy.sqrt{a**3} # or something like this
 
+    summary_text = "PythonForm summary still not available"
+
     def apply_python(self, expr, evaluation) -> Expression:
         "MakeBoxes[expr_, PythonForm]"
 
@@ -2163,6 +2198,8 @@ class SympyForm(Builtin):
     >> E^2 + 3E // SympyForm
     = exp(2) + 3*E
     """
+
+    summary_text = "SympyForm summary still not available"
 
     def apply_sympy(self, expr, evaluation) -> Expression:
         "MakeBoxes[expr_, SympyForm]"
@@ -2198,6 +2235,8 @@ class TeXForm(Builtin):
      = a\text{ + }b*c
     """
 
+    summary_text = "TeXForm summary still not available"
+
     def apply_tex(self, expr, evaluation) -> Expression:
         "MakeBoxes[expr_, TeXForm]"
 
@@ -2220,6 +2259,7 @@ class TeXForm(Builtin):
 
 
 class Style(Builtin):
+    summary_text = "Style summary still not available"
     options = {"ImageSizeMultipliers": "Automatic"}
 
     rules = {
@@ -2249,6 +2289,8 @@ class Precedence(Builtin):
     >> Precedence[a + b]
      = 1000.
     """
+
+    summary_text = "Precedence summary still not available"
 
     def apply(self, expr, evaluation) -> Real:
         "Precedence[expr_]"
@@ -2613,6 +2655,7 @@ class NumberForm(_NumberForm):
      = 142.3
     """
 
+    summary_text = "NumberForm summary still not available"
     options = {
         "DigitBlock": "Infinity",
         "ExponentFunction": "Automatic",
@@ -2782,6 +2825,7 @@ class BaseForm(Builtin):
      = 3.243f6a8885a308d313198a2e_16
     """
 
+    summary_text = "BaseForm summary still not available"
     messages = {
         "intpm": (
             "Positive machine-sized integer expected at position 2 in "

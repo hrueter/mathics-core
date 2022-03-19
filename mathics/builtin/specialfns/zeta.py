@@ -28,6 +28,8 @@ class LerchPhi(_MPMathFunction):
     mpmath_name = "lerchphi"
     sympy_name = "lerchphi"
 
+    summary_text = "LerchPhi summary still not available"
+
     def apply(self, z, s, a, evaluation):
         "%(name)s[z_, s_, a_]"
 

@@ -67,6 +67,7 @@ class Function(PostfixOperator):
     precedence = 90
     attributes = hold_all | protected
 
+    summary_text = "Function summary still not available"
     messages = {
         "slot": "`1` should contain a positive integer.",
         "slotn": "Slot number `1` cannot be filled.",
@@ -156,6 +157,7 @@ class Slot(Builtin):
 
     attributes = n_hold_all | protected
 
+    summary_text = "Slot summary still not available"
     rules = {
         "Slot[]": "Slot[1]",
         "MakeBoxes[Slot[n_Integer?NonNegative],"
@@ -188,6 +190,7 @@ class SlotSequence(Builtin):
 
     attributes = n_hold_all | protected
 
+    summary_text = "SlotSequence summary still not available"
     rules = {
         "SlotSequence[]": "SlotSequence[1]",
         "MakeBoxes[SlotSequence[n_Integer?Positive],"
@@ -218,6 +221,7 @@ class Composition(Builtin):
 
     attributes = flat | one_identity | protected
 
+    summary_text = "Composition summary still not available"
     rules = {
         "Composition[]": "Identity",
     }
@@ -245,6 +249,7 @@ class Identity(Builtin):
      = Identity[x, y]
     """
 
+    summary_text = "Identity summary still not available"
     rules = {
         "Identity[x_]": "x",
     }

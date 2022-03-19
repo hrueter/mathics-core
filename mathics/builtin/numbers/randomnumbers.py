@@ -160,6 +160,7 @@ class RandomState(Builtin):
 
     name = "$RandomState"
 
+    summary_text = "RandomState summary still not available"
     messages = {
         "rndst": "It is not possible to change the random state.",
         # "`1` is not a valid random state.",
@@ -209,6 +210,7 @@ class SeedRandom(Builtin):
      = SeedRandom[x]
     """
 
+    summary_text = "SeedRandom summary still not available"
     messages = {
         "seed": "Argument `1` should be an integer or string.",
     }
@@ -301,6 +303,7 @@ class RandomInteger(Builtin):
      = True
     """
 
+    summary_text = "RandomInteger summary still not available"
     messages = {
         "unifr": (
             "The endpoints specified by `1` for the endpoints of the "
@@ -373,6 +376,7 @@ class RandomReal(Builtin):
      = RandomReal[{0, 1}, {1, -1}]
     """
 
+    summary_text = "RandomReal summary still not available"
     messages = {
         "unifr": (
             "The endpoints specified by `1` for the endpoints of the "
@@ -470,6 +474,7 @@ class RandomComplex(Builtin):
      = Complex[..., ...]
     """
 
+    summary_text = "RandomComplex summary still not available"
     messages = {
         "unifr": (
             "The endpoints specified by `1` for the endpoints of the "
@@ -710,6 +715,7 @@ class Random(Builtin):
     Legacy function. Superseded by RandomReal, RandomInteger and RandomComplex.
     """
 
+    summary_text = "Random summary still not available"
     rules = {
         "Random[Integer]": "RandomInteger[]",
         "Random[Integer,  zmax_Integer]": "RandomInteger[zmax]",

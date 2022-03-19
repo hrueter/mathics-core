@@ -316,6 +316,7 @@ class Reap(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "Reap summary still not available"
     rules = {
         "Reap[expr_, pattern_, f_]": (
             "{#[[1]], #[[2, 1]]}& [Reap[expr, {pattern}, f]]"
@@ -371,6 +372,7 @@ class Sow(Builtin):
     </dl>
     """
 
+    summary_text = "Sow summary still not available"
     rules = {
         "Sow[e_]": "Sow[e, {Null}]",
         "Sow[e_, tag_]": "Sow[e, {tag}]",

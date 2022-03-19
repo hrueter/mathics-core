@@ -64,6 +64,8 @@ class ByteOrdering(Predefined):
 
     name = "$ByteOrdering"
 
+    summary_text = "ByteOrdering summary still not available"
+
     def evaluate(self, evaluation) -> Integer:
         return Integer(1 if sys.byteorder == "big" else -1)
 
@@ -80,6 +82,8 @@ class CommandLine(Predefined):
 
     name = "$CommandLine"
 
+    summary_text = "CommandLine summary still not available"
+
     def evaluate(self, evaluation) -> Expression:
         return Expression(SymbolList, *(String(arg) for arg in sys.argv))
 
@@ -93,6 +97,8 @@ class Environment(Builtin):
     X> Environment["HOME"]
      = ...
     """
+
+    summary_text = "Environment summary still not available"
 
     def apply(self, var, evaluation):
         "Environment[var_String]"
@@ -129,6 +135,8 @@ class GetEnvironment(Builtin):
     = ...
     """
 
+    summary_text = "GetEnvironment summary still not available"
+
     def apply(self, var, evaluation):
         "GetEnvironment[var___]"
         if isinstance(var, String):
@@ -163,6 +171,8 @@ class Machine(Predefined):
 
     name = "$Machine"
 
+    summary_text = "Machine summary still not available"
+
     def evaluate(self, evaluation) -> String:
         return String(sys.platform)
 
@@ -179,6 +189,8 @@ class MachineName(Predefined):
 
     name = "$MachineName"
 
+    summary_text = "MachineName summary still not available"
+
     def evaluate(self, evaluation) -> String:
         return String(platform.uname().node)
 
@@ -193,6 +205,8 @@ class MathicsVersion(Predefined):
     >> MathicsVersion
     = ...
     """
+
+    summary_text = "MathicsVersion summary still not available"
 
     def evaluate(self, evaluation) -> String:
         return String(__version__)
@@ -212,6 +226,7 @@ class Packages(Predefined):
     """
 
     name = "$Packages"
+    summary_text = "Packages summary still not available"
     rules = {
         "$Packages": '{"ImportExport`",  "XML`","Internal`", "System`", "Global`"}'
     }
@@ -233,6 +248,8 @@ class ParentProcessID(Predefined):
 
     name = "$ParentProcessID"
 
+    summary_text = "ParentProcessID summary still not available"
+
     def evaluate(self, evaluation) -> Integer:
         return Integer(os.getppid())
 
@@ -253,6 +270,8 @@ class ProcessID(Predefined):
 
     name = "$ProcessID"
 
+    summary_text = "ProcessID summary still not available"
+
     def evaluate(self, evaluation) -> Integer:
         return Integer(os.getpid())
 
@@ -269,6 +288,8 @@ class ProcessorType(Predefined):
 
     name = "$ProcessorType"
 
+    summary_text = "ProcessorType summary still not available"
+
     def evaluate(self, evaluation):
         return String(platform.machine())
 
@@ -284,6 +305,8 @@ class ScriptCommandLine(Predefined):
     """
 
     name = "$ScriptCommandLine"
+
+    summary_text = "ScriptCommandLine summary still not available"
 
     def evaluate(self, evaluation):
         try:
@@ -306,6 +329,8 @@ class Run(Builtin):
      = ...
     """
 
+    summary_text = "Run summary still not available"
+
     def apply(self, command, evaluation):
         "Run[command_String]"
         command_str = command.to_python()
@@ -323,6 +348,8 @@ class SystemID(Predefined):
     """
 
     name = "$SystemID"
+
+    summary_text = "SystemID summary still not available"
 
     def evaluate(self, evaluation) -> String:
         return String(sys.platform)
@@ -342,6 +369,8 @@ class SystemWordLength(Predefined):
     """
 
     name = "$SystemWordLength"
+
+    summary_text = "SystemWordLength summary still not available"
 
     def evaluate(self, evaluation) -> Integer:
         # https://docs.python.org/3/library/platform.html#module-platform
@@ -367,6 +396,8 @@ class UserName(Predefined):
 
     name = "$UserName"
 
+    summary_text = "UserName summary still not available"
+
     def evaluate(self, evaluation) -> String:
         try:
             user = os.getlogin()
@@ -390,6 +421,8 @@ class Version(Predefined):
 
     name = "$Version"
 
+    summary_text = "Version summary still not available"
+
     def evaluate(self, evaluation) -> String:
         return String(version_string.replace("\n", " "))
 
@@ -407,6 +440,8 @@ class VersionNumber(Predefined):
 
     name = "$VersionNumber"
     value = 10.0
+
+    summary_text = "VersionNumber summary still not available"
 
     def evaluate(self, evaluation) -> Real:
         # Make this be whatever the latest Mathematica release is,
@@ -501,6 +536,8 @@ class MemoryInUse(Builtin):
      = ...
     """
 
+    summary_text = "MemoryInUse summary still not available"
+
     def apply_0(self, evaluation) -> Integer:
         """MemoryInUse[]"""
         # Partially borrowed from https://code.activestate.com/recipes/577504/
@@ -545,6 +582,8 @@ class Share(Builtin):
     >> Share[]
      = ...
     """
+
+    summary_text = "Share summary still not available"
 
     def apply_0(self, evaluation) -> Integer:
         """Share[]"""

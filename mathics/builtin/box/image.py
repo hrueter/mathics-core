@@ -8,6 +8,8 @@ class ImageBox(BoxConstruct):
     an Image object.
     """
 
+    summary_text = "ImageBox summary still not available"
+
     def boxes_to_text(self, elements=None, **options):
         return "-Image-"
 

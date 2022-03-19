@@ -50,6 +50,7 @@ class HistoryLength(Builtin):
 
     name = "$HistoryLength"
 
+    summary_text = "HistoryLength summary still not available"
     rules = {
         "$HistoryLength": "100",
     }
@@ -88,6 +89,7 @@ class In(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "In summary still not available"
     rules = {
         "In[k_Integer?Negative]": "In[$Line + k]",
     }
@@ -241,6 +243,7 @@ class Out(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "Out summary still not available"
     rules = {
         "Out[k_Integer?Negative]": "Out[$Line + k]",
         "Out[]": "Out[$Line - 1]",

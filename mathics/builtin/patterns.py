@@ -117,6 +117,7 @@ class RuleDelayed(BinaryOperator):
     precedence = 120
     attributes = sequence_hold | hold_rest | protected
     needs_verbatim = True
+    summary_text = "RuleDelayed summary still not available"
 
 
 def create_rules(rules_expr, expr, name, evaluation, extra_args=[]):
@@ -226,6 +227,7 @@ class Replace(Builtin):
      = 11
     """
 
+    summary_text = "Replace summary still not available"
     messages = {
         "reps": "`1` is not a valid replacement rule.",
         "rmix": "Elements of `1` are a mixture of lists and nonlists.",
@@ -306,6 +308,7 @@ class ReplaceAll(BinaryOperator):
     grouping = "Left"
     needs_verbatim = True
 
+    summary_text = "ReplaceAll summary still not available"
     messages = {
         "reps": "`1` is not a valid replacement rule.",
         "rmix": "Elements of `1` are a mixture of lists and nonlists.",
@@ -356,6 +359,7 @@ class ReplaceRepeated(BinaryOperator):
     grouping = "Left"
     needs_verbatim = True
 
+    summary_text = "ReplaceRepeated summary still not available"
     messages = {
         "reps": "`1` is not a valid replacement rule.",
         "rmix": "Elements of `1` are a mixture of lists and nonlists.",
@@ -434,6 +438,7 @@ class ReplaceList(Builtin):
      = {{a, b + c}, {b, a + c}, {c, a + b}, {a + b, c}, {a + c, b}, {b + c, a}}
     """
 
+    summary_text = "ReplaceList summary still not available"
     messages = {
         "reps": "`1` is not a valid replacement rule.",
         "rmix": "Elements of `1` are a mixture of lists and nonlists.",
@@ -490,6 +495,8 @@ class PatternTest(BinaryOperator, PatternObject):
     precedence = 680
 
     arg_counts = [2]
+
+    summary_text = "PatternTest summary still not available"
 
     def init(self, expr):
         super(PatternTest, self).init(expr)
@@ -707,6 +714,8 @@ class Alternatives(BinaryOperator, PatternObject):
 
     arg_counts = None
 
+    summary_text = "Alternatives summary still not available"
+
     def init(self, expr):
         super(Alternatives, self).init(expr)
         self.alternatives = [Pattern.create(leaf) for leaf in expr.leaves]
@@ -760,6 +769,8 @@ class Except(PatternObject):
     """
 
     arg_counts = [1, 2]
+
+    summary_text = "Except summary still not available"
 
     def init(self, expr):
         super(Except, self).init(expr)
@@ -825,6 +836,7 @@ class MatchQ(Builtin):
      = False
     """
 
+    summary_text = "MatchQ summary still not available"
     rules = {"MatchQ[form_][expr_]": "MatchQ[expr, form]"}
 
     def apply(self, expr, form, evaluation):
@@ -860,6 +872,8 @@ class Verbatim(PatternObject):
 
     arg_counts = [1, 2]
 
+    summary_text = "Verbatim summary still not available"
+
     def init(self, expr):
         super(Verbatim, self).init(expr)
         self.content = expr.leaves[0]
@@ -890,6 +904,8 @@ class HoldPattern(PatternObject):
     attributes = hold_all | protected
 
     arg_counts = [1]
+
+    summary_text = "HoldPattern summary still not available"
 
     def init(self, expr):
         super(HoldPattern, self).init(expr)
@@ -948,6 +964,7 @@ class Pattern_(PatternObject):
 
     attributes = hold_first | protected
 
+    summary_text = "Pattern_ summary still not available"
     messages = {
         "patvar": "First element in pattern `1` is not a valid pattern name.",
         "nodef": (
@@ -1067,6 +1084,7 @@ class Optional(BinaryOperator, PatternObject):
 
     default_formats = False
 
+    summary_text = "Optional summary still not available"
     rules = {
         "MakeBoxes[Verbatim[Optional][Verbatim[Pattern][symbol_Symbol, Verbatim[_]]], f:StandardForm|TraditionalForm|InputForm|OutputForm]": 'MakeBoxes[symbol, f] <> "_."',
         "MakeBoxes[Verbatim[Optional][Verbatim[_]], f:StandardForm|TraditionalForm|InputForm|OutputForm]": '"_."',
@@ -1189,6 +1207,7 @@ class Blank(_Blank):
      = xxxxxxxxxxxx
     """
 
+    summary_text = "Blank summary still not available"
     rules = {
         "MakeBoxes[Verbatim[Blank][], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"_"',
         "MakeBoxes[Verbatim[Blank][head_Symbol], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"_" <> MakeBoxes[head, f]',
@@ -1242,6 +1261,7 @@ class BlankSequence(_Blank):
      = {ab, ax, ax}
     """
 
+    summary_text = "BlankSequence summary still not available"
     rules = {
         "MakeBoxes[Verbatim[BlankSequence][], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"__"',
         "MakeBoxes[Verbatim[BlankSequence][head_Symbol], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"__" <> MakeBoxes[head, f]',
@@ -1296,6 +1316,7 @@ class BlankNullSequence(_Blank):
      = {ax, ax, ax}
     """
 
+    summary_text = "BlankNullSequence summary still not available"
     rules = {
         "MakeBoxes[Verbatim[BlankNullSequence][], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"___"',
         "MakeBoxes[Verbatim[BlankNullSequence][head_Symbol], f:StandardForm|TraditionalForm|OutputForm|InputForm]": '"___" <> MakeBoxes[head, f]',
@@ -1345,6 +1366,7 @@ class Repeated(PostfixOperator, PatternObject):
      = {False, True, True}
     """
 
+    summary_text = "Repeated summary still not available"
     messages = {
         "range": (
             "Range specification in integers (max or {min, max}) "
@@ -1428,11 +1450,14 @@ class RepeatedNull(Repeated):
     operator = "..."
     precedence = 170
 
+    summary_text = "RepeatedNull summary still not available"
+
     def init(self, expr):
         super(RepeatedNull, self).init(expr, min=0)
 
 
 class Shortest(Builtin):
+    summary_text = "Shortest summary still not available"
     pass
 
 
@@ -1445,6 +1470,7 @@ class Longest(Builtin):
      = {aab, aaab}
     """
 
+    summary_text = "Longest summary still not available"
     pass
 
 
@@ -1479,6 +1505,8 @@ class Condition(BinaryOperator, PatternObject):
     attributes = hold_rest | protected
 
     arg_counts = [2]
+
+    summary_text = "Condition summary still not available"
 
     def init(self, expr):
         super(Condition, self).init(expr)
@@ -1558,6 +1586,8 @@ class OptionsPattern(PatternObject):
     """
 
     arg_counts = [0, 1]
+
+    summary_text = "OptionsPattern summary still not available"
 
     def init(self, expr):
         super(OptionsPattern, self).init(expr)
@@ -1671,6 +1701,7 @@ class DispatchAtom(AtomBuiltin):
      = 4
     """
 
+    summary_text = "DispatchAtom summary still not available"
     messages = {
         "invrpl": "`1` is not a valid rule or list of rules.",
     }

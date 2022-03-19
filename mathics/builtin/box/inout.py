@@ -30,14 +30,17 @@ class InterpretationBox(Builtin):
 
 
 class SubscriptBox(Builtin):
+    summary_text = "SubscriptBox summary still not available"
     pass
 
 
 class SubsuperscriptBox(Builtin):
+    summary_text = "SubsuperscriptBox summary still not available"
     pass
 
 
 class SuperscriptBox(Builtin):
+    summary_text = "SuperscriptBox summary still not available"
     pass
 
 

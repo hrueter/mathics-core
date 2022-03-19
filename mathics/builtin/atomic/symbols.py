@@ -750,6 +750,8 @@ class SymbolQ(Test):
      = False
     """
 
+    summary_text = "SymbolQ summary still not available"
+
     def test(self, expr):
         return isinstance(expr, Symbol)
 

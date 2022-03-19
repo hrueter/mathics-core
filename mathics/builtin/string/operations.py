@@ -169,6 +169,7 @@ class StringDrop(Builtin):
     = abcd
     """
 
+    summary_text = "StringDrop summary still not available"
     messages = {
         "strse": "String expected at position 1.",
         "mseqs": "Integer or list of two Integers are expected at position 2.",
@@ -341,6 +342,7 @@ class StringInsert(Builtin):
     >> StringInsert["1234567890123456", ".", Range[-16, -4, 3]]
      = 1.234.567.890.123.456"""
 
+    summary_text = "StringInsert summary still not available"
     messages = {
         "strse": "String or list of strings expected at position `1` in `2`.",
         "string": "String expected at position `1` in `2`.",
@@ -547,6 +549,7 @@ class StringPosition(Builtin):
      = {{5, 7}, {10, 12}}
     """
 
+    summary_text = "StringPosition summary still not available"
     options = {
         "IgnoreCase": "False",
         "MetaCharacters": "None",
@@ -740,6 +743,7 @@ class StringReplace(_StringFind):
      = A x B
     """
 
+    summary_text = "StringReplace summary still not available"
     rules = {
         "StringReplace[rule_][string_]": "StringReplace[string, rule]",
     }
@@ -776,6 +780,8 @@ class StringReverse(Builtin):
     """
 
     attributes = listable | protected
+
+    summary_text = "StringReverse summary still not available"
 
     def apply(self, string, evaluation):
         "StringReverse[string_String]"
@@ -1093,6 +1099,7 @@ class StringTake(Builtin):
      = StringTake[kkkl, -Graphics-]
     """
 
+    summary_text = "StringTake summary still not available"
     messages = {
         "strse": "String or list of strings expected at position 1.",
         # FIXME: mseqs should be: Sequence specification (+n, -n, {+n}, {-n}, {m, n}, or {m, n, s}) or a list

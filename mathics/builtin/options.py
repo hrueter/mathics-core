@@ -82,6 +82,8 @@ class Options(Builtin):
      = a /; True
     """
 
+    summary_text = "Options summary still not available"
+
     def apply(self, f, evaluation):
         "Options[f_]"
 
@@ -135,6 +137,7 @@ class OptionValue(Builtin):
      = {5}
     """
 
+    summary_text = "OptionValue summary still not available"
     messages = {
         "optnf": "Option name `1` not found.",
     }
@@ -256,6 +259,8 @@ class Default(Builtin):
      = {{3, 5}, {4, 5}}
     """
 
+    summary_text = "Default summary still not available"
+
     def apply(self, f, i, evaluation):
         "Default[f_, i___]"
 
@@ -308,6 +313,8 @@ class OptionQ(Test):
      = False
     """
 
+    summary_text = "OptionQ summary still not available"
+
     def test(self, expr):
         expr = expr.flatten_with_respect_to_head(SymbolList)
         if not expr.has_form("List", None):
@@ -338,6 +345,8 @@ class NotOptionQ(Test):
      = False
     """
 
+    summary_text = "NotOptionQ summary still not available"
+
     def test(self, expr):
         expr = expr.flatten_with_respect_to_head(SymbolList)
         if not expr.has_form("List", None):
@@ -365,6 +374,7 @@ class FilterRules(Builtin):
      = {x -> 100, z -> 10000}
     """
 
+    summary_text = "FilterRules summary still not available"
     rules = {
         "FilterRules[rules_List, patterns_List]": "FilterRules[rules, Alternatives @@ patterns]",
     }

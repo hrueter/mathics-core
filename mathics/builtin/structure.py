@@ -75,6 +75,8 @@ class Sort(Builtin):
      = {x_, y_}
     """
 
+    summary_text = "Sort summary still not available"
+
     def apply(self, list, evaluation):
         "Sort[list_]"
 
@@ -124,6 +126,7 @@ class SortBy(Builtin):
     = {{10, -9}, {5, 1}}
     """
 
+    summary_text = "SortBy summary still not available"
     rules = {
         "SortBy[f_]": "SortBy[#, f]&",
     }
@@ -211,6 +214,7 @@ class BinarySearch(Builtin):
 
     context = "CombinatoricaOld`"
 
+    summary_text = "BinarySearch summary still not available"
     rules = {
         "CombinatoricaOld`BinarySearch[l_List, k_] /; Length[l] > 0": "CombinatoricaOld`BinarySearch[l, k, Identity]"
     }
@@ -279,6 +283,8 @@ class PatternsOrderedQ(Builtin):
      = True
     """
 
+    summary_text = "PatternsOrderedQ summary still not available"
+
     def apply(self, p1, p2, evaluation):
         "PatternsOrderedQ[p1_, p2_]"
 
@@ -301,6 +307,8 @@ class OrderedQ(Builtin):
     >> OrderedQ[{b, a}]
      = False
     """
+
+    summary_text = "OrderedQ summary still not available"
 
     def apply(self, expr, evaluation):
         "OrderedQ[expr_]"
@@ -334,6 +342,8 @@ class Order(Builtin):
      = 0
     """
 
+    summary_text = "Order summary still not available"
+
     def apply(self, x, y, evaluation):
         "Order[x_, y_]"
         if x < y:
@@ -359,6 +369,8 @@ class Head(Builtin):
      = Symbol
     """
 
+    summary_text = "Head summary still not available"
+
     def apply(self, expr, evaluation):
         "Head[expr_]"
 
@@ -381,6 +393,7 @@ class ApplyLevel(BinaryOperator):
     precedence = 620
     grouping = "Right"
 
+    summary_text = "ApplyLevel summary still not available"
     rules = {
         "ApplyLevel[f_, expr_]": "Apply[f, expr, {1}]",
     }
@@ -429,6 +442,7 @@ class Apply(BinaryOperator):
     precedence = 620
     grouping = "Right"
 
+    summary_text = "Apply summary still not available"
     options = {
         "Heads": "False",
     }
@@ -491,6 +505,7 @@ class Map(BinaryOperator):
     precedence = 620
     grouping = "Right"
 
+    summary_text = "Map summary still not available"
     options = {
         "Heads": "False",
     }
@@ -555,6 +570,7 @@ class MapAt(Builtin):
      = {f[a], b, c, d}
     """
 
+    summary_text = "MapAt summary still not available"
     rules = {
         "MapAt[f_, pos_][expr_]": "MapAt[f, expr, pos]",
     }
@@ -623,6 +639,7 @@ class Scan(Builtin):
      = 1
     """
 
+    summary_text = "Scan summary still not available"
     options = {
         "Heads": "False",
     }
@@ -696,6 +713,7 @@ class MapIndexed(Builtin):
      = MapIndexed[f, {1, 2}, a + b]
     """
 
+    summary_text = "MapIndexed summary still not available"
     options = {
         "Heads": "False",
     }
@@ -767,6 +785,7 @@ class MapThread(Builtin):
      = {{f[a, d], f[b, e]}, {f[c, f]}}
     """
 
+    summary_text = "MapThread summary still not available"
     messages = {
         "intnm": "Non-negative machine-sized integer expected at position `2` in `1`.",
         "mptc": "Incompatible dimensions of objects at positions {2, `1`} and {2, `2`} of `3`; dimensions are `4` and `5`.",
@@ -857,6 +876,7 @@ class Thread(Builtin):
      = {a + d + g, b + e + g, c + f + g}
     """
 
+    summary_text = "Thread summary still not available"
     messages = {
         "tdlen": "Objects of unequal length cannot be combined.",
     }
@@ -896,6 +916,7 @@ class FreeQ(Builtin):
      = True
     """
 
+    summary_text = "FreeQ summary still not available"
     rules = {
         "FreeQ[form_][expr_]": "FreeQ[expr, form]",
     }
@@ -971,6 +992,7 @@ class Flatten(Builtin):
      = Flatten[{{1, 2}, {3, {4}}}, {{1, 2, 3}}, List]
     """
 
+    summary_text = "Flatten summary still not available"
     rules = {
         "Flatten[expr_]": "Flatten[expr, Infinity, Head[expr]]",
         "Flatten[expr_, n_]": "Flatten[expr, n, Head[expr]]",
@@ -1144,6 +1166,8 @@ class Depth(Builtin):
      = 2
     """
 
+    summary_text = "Depth summary still not available"
+
     def apply(self, expr, evaluation):
         "Depth[expr_]"
         expr, depth = walk_levels(expr)
@@ -1175,6 +1199,7 @@ class Operate(Builtin):
      = Operate[p, f, -1]
     """
 
+    summary_text = "Operate summary still not available"
     messages = {
         "intnn": "Non-negative integer expected at position `2` in `1`.",
     }
@@ -1226,6 +1251,8 @@ class Through(Builtin):
      = p[f[x], g[x]]
     """
 
+    summary_text = "Through summary still not available"
+
     def apply(self, p, args, x, evaluation):
         "Through[p_[args___][x___]]"
 
@@ -1244,6 +1271,8 @@ class ByteCount(Builtin):
 
     The results may heavily depend on the Python implementation in use.
     """
+
+    summary_text = "ByteCount summary still not available"
 
     def apply(self, expression, evaluation):
         "ByteCount[expression_]"

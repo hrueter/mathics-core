@@ -36,6 +36,7 @@ class SparseArray(Builtin):
 
     """
 
+    summary_text = "SparseArray summary still not available"
     messages = {
         "list": "List expected at position 1 in SparseArray[``1``]",
         "rect": "Rectangular array or list of rules is expected at position 1 in SparseArray[``1``]",

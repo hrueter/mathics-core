@@ -60,6 +60,7 @@ class RecursionLimit(Predefined):
 
     set_python_recursion_limit(value)
 
+    summary_text = "RecursionLimit summary still not available"
     rules = {
         "$RecursionLimit": str(value),
     }
@@ -122,6 +123,7 @@ class IterationLimit(Predefined):
     name = "$IterationLimit"
     value = 1000
 
+    summary_text = "IterationLimit summary still not available"
     rules = {
         "$IterationLimit": str(value),
     }
@@ -186,6 +188,7 @@ class HoldForm(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "HoldForm summary still not available"
     rules = {
         "MakeBoxes[HoldForm[expr_], f_]": "MakeBoxes[expr, f]",
     }
@@ -217,6 +220,7 @@ class Evaluate(Builtin):
      = Sequence[1, 2]
     """
 
+    summary_text = "Evaluate summary still not available"
     rules = {
         "Evaluate[Unevaluated[x_]]": "Unevaluated[x]",
         "Evaluate[x___]": "x",
@@ -280,6 +284,7 @@ class ReleaseHold(Builtin):
      = y
     """
 
+    summary_text = "ReleaseHold summary still not available"
     rules = {
         "ReleaseHold[(Hold|HoldForm|HoldPattern|HoldComplete)[expr_]]": "expr",
         "ReleaseHold[other_]": "other",
@@ -336,6 +341,7 @@ class Quit(Builtin):
 
     """
 
+    summary_text = "Quit summary still not available"
     rules = {
         "Exit[n___]": "Quit[n]",
     }

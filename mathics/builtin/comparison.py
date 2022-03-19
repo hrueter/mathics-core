@@ -376,6 +376,7 @@ class TrueQ(Builtin):
      = False
     """
 
+    summary_text = "TrueQ summary still not available"
     rules = {
         "TrueQ[expr_]": "If[expr, True, False, False]",
     }
@@ -407,6 +408,7 @@ class BooleanQ(Builtin):
      = False
     """
 
+    summary_text = "BooleanQ summary still not available"
     rules = {
         "BooleanQ[expr_]": "If[expr, True, True, False]",
     }
@@ -433,6 +435,7 @@ class Inequality(Builtin):
      = False
     """
 
+    summary_text = "Inequality summary still not available"
     messages = {
         "ineq": (
             "Inequality called with `` arguments; the number of "
@@ -534,6 +537,8 @@ def do_cmp(x1, x2) -> Optional[int]:
 
 
 class SympyComparison(SympyFunction):
+    summary_text = "SympyComparison summary still not available"
+
     def to_sympy(self, expr, **kwargs):
         to_sympy = super(SympyComparison, self).to_sympy
         if len(expr.leaves) > 2:
@@ -864,6 +869,7 @@ class Positive(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "Positive summary still not available"
     rules = {
         "Positive[x_?NumericQ]": "If[x > 0, True, False, False]",
     }
@@ -893,6 +899,7 @@ class Negative(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "Negative summary still not available"
     rules = {
         "Negative[x_?NumericQ]": "If[x < 0, True, False, False]",
     }
@@ -911,6 +918,7 @@ class NonNegative(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "NonNegative summary still not available"
     rules = {
         "NonNegative[x_?NumericQ]": "If[x >= 0, True, False, False]",
     }
@@ -929,6 +937,7 @@ class NonPositive(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "NonPositive summary still not available"
     rules = {
         "NonPositive[x_?NumericQ]": "If[x <= 0, True, False, False]",
     }

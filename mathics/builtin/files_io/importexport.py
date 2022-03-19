@@ -942,6 +942,8 @@ class ImportFormats(Predefined):
 
     name = "$ImportFormats"
 
+    summary_text = "ImportFormats summary still not available"
+
     def evaluate(self, evaluation):
         return Expression(SymbolList, *sorted(IMPORTERS.keys()))
 
@@ -959,6 +961,8 @@ class ExportFormats(Predefined):
 
     name = "$ExportFormats"
 
+    summary_text = "ExportFormats summary still not available"
+
     def evaluate(self, evaluation):
         return Expression(SymbolList, *sorted(EXPORTERS.keys()))
 
@@ -975,6 +979,8 @@ class ConverterDumpsExtensionMappings(Predefined):
     name = "$extensionMappings"
     attributes = no_attributes
 
+    summary_text = "ConverterDumpsExtensionMappings summary still not available"
+
     def evaluate(self, evaluation):
         return from_python(EXTENSIONMAPPINGS)
 
@@ -990,6 +996,8 @@ class ConverterDumpsFormatMappings(Predefined):
     context = "System`ConvertersDump`"
     name = "$formatMappings"
     attributes = no_attributes
+
+    summary_text = "ConverterDumpsFormatMappings summary still not available"
 
     def evaluate(self, evaluation):
         return from_python(FORMATMAPPINGS)
@@ -1073,6 +1081,7 @@ class RegisterImport(Builtin):
     attributes = protected | read_protected
 
     # XXX OptionsIssue
+    summary_text = "RegisterImport summary still not available"
     options = {
         "Path": "Automatic",
         "FunctionChannels": '{"FileNames"}',
@@ -1159,6 +1168,7 @@ class RegisterExport(Builtin):
 
     context = "ImportExport`"
 
+    summary_text = "RegisterExport summary still not available"
     options = {
         "Path": "Automatic",
         "FunctionChannels": '{"FileNames"}',
@@ -1196,6 +1206,7 @@ class URLFetch(Builtin):
     # = ...
     """
 
+    summary_text = "URLFetch summary still not available"
     messages = {
         "httperr": "`1` could not be retrieved; `2`.",
     }
@@ -1309,6 +1320,7 @@ class Import(Builtin):
      = {accidental, alter, arpeggiate, ..., words}
     """
 
+    summary_text = "Import summary still not available"
     messages = {
         "nffil": "File not found during Import.",
         "chtype": (
@@ -1586,6 +1598,7 @@ class ImportString(Import):
      = ...
     """
 
+    summary_text = "ImportString summary still not available"
     messages = {
         "string": "First argument `1` is not a string.",
         "noelem": ("The Import element `1` is not present when importing as `2`."),
@@ -1706,6 +1719,7 @@ class Export(Builtin):
 
     """
 
+    summary_text = "Export summary still not available"
     messages = {
         "chtype": "First argument `1` is not a valid file specification.",
         "infer": "Cannot infer format of file `1`.",
@@ -1893,6 +1907,7 @@ class ExportString(Builtin):
      = String
     """
 
+    summary_text = "ExportString summary still not available"
     options = {
         "$OptionSyntax": "System`Ignore",
     }
@@ -2093,6 +2108,7 @@ class FileFormat(Builtin):
      = XML
     """
 
+    summary_text = "FileFormat summary still not available"
     messages = {
         "nffil": "File not found during `1`.",
     }
@@ -2167,6 +2183,8 @@ class B64Encode(Builtin):
     context = "System`Convert`B64Dump`"
     name = "B64Encode"
 
+    summary_text = "B64Encode summary still not available"
+
     def apply(self, expr, evaluation):
         "System`Convert`B64Dump`B64Encode[expr_]"
         if isinstance(expr, String):
@@ -2197,6 +2215,7 @@ class B64Decode(Builtin):
     context = "System`Convert`B64Dump`"
     name = "B64Decode"
 
+    summary_text = "B64Decode summary still not available"
     messages = {
         "b64invalidstr": 'String "`1`" is not a valid b64 encoded string.',
     }
@@ -2224,6 +2243,7 @@ class ConvertCommonDumpRemoveLinearSyntax(Builtin):
     </dl>
     """
 
+    summary_text = "ConvertCommonDumpRemoveLinearSyntax summary still not available"
     options = {
         "System`Convert`CommonDump`ConvertRecursive": "False",
     }

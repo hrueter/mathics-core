@@ -64,6 +64,7 @@ class ProductLog(_MPMathFunction):
     sympy_name = "LambertW"  # function called LambertW in SymPy
     mpmath_name = "lambertw"
 
+    summary_text = "ProductLog summary still not available"
     rules = {
         "ProductLog[0]": "0",
         "ProductLog[E]": "1",

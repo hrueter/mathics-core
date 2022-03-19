@@ -258,6 +258,7 @@ class ColorDistance(Builtin):
 
     """
 
+    summary_text = "ColorDistance summary still not available"
     options = {"DistanceFunction": "Automatic"}
 
     requires = ("numpy",)
@@ -459,6 +460,8 @@ class Hue(_Color):
     components_sizes = [1, 2, 3, 4]
     default_components = [0, 1, 1, 1]
 
+    summary_text = "Hue summary still not available"
+
     def hsl_to_rgba(self):
         h, s, l = self.components[:3]
         if l < 0.5:
@@ -552,6 +555,8 @@ class RGBColor(_Color):
     color_space = "RGB"
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]
+
+    summary_text = "RGBColor summary still not available"
 
     def to_rgba(self):
         return self.components

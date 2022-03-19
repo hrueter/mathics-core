@@ -20,6 +20,7 @@ class Accumulate(Builtin):
      = {1, 3, 6}
     """
 
+    summary_text = "Accumulate summary still not available"
     rules = {"Accumulate[head_]": "FoldList[Plus, head]"}
 
 
@@ -40,6 +41,7 @@ class Mean(Builtin):
      = (a + b) / 2
     """
 
+    summary_text = "Mean summary still not available"
     rules = {
         "Mean[list_]": "Total[list] / Length[list]",
     }
@@ -72,6 +74,7 @@ class Total(Builtin):
      = {6, 15, 24}
     """
 
+    summary_text = "Total summary still not available"
     rules = {
         "Total[head_]": "Apply[Plus, head]",
         "Total[head_, n_]": "Apply[Plus, Flatten[head, n]]",

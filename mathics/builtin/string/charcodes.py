@@ -76,6 +76,7 @@ class ToCharacterCode(Builtin):
      = {}
     """
 
+    summary_text = "ToCharacterCode summary still not available"
     messages = {
         "strse": "String or list of strings expected at position `1` in `2`.",
     }
@@ -193,6 +194,7 @@ class FromCharacterCode(Builtin):
      = FromCharacterCode[{{97, 98, x}, {100, 101, x}}]
     """
 
+    summary_text = "FromCharacterCode summary still not available"
     messages = {
         "notunicode": (
             "A character code, which should be a non-negative integer less "

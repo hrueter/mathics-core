@@ -181,6 +181,7 @@ class Mesh(Builtin):
      = -Graphics3D-
     """
 
+    summary_text = "Mesh summary still not available"
     messages = {
         "ilevels": "`1` is not a valid mesh specification.",
     }

@@ -8,6 +8,8 @@ class CompiledCodeBox(BoxConstruct):
     to CompiledCode.
     """
 
+    summary_text = "CompiledCodeBox summary still not available"
+
     def boxes_to_text(self, elements=None, **options):
         if elements is None:
             elements = self._elements

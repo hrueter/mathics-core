@@ -310,6 +310,7 @@ class SystemCharacterEncoding(Predefined):
 
     name = "$SystemCharacterEncoding"
 
+    summary_text = "SystemCharacterEncoding summary still not available"
     rules = {
         "$SystemCharacterEncoding": '"' + SYSTEM_CHARACTER_ENCODING + '"',
     }
@@ -327,6 +328,7 @@ class CharacterEncoding(Predefined):
     name = "$CharacterEncoding"
     value = '"UTF-8"'
 
+    summary_text = "CharacterEncoding summary still not available"
     rules = {
         "$CharacterEncoding": value,
     }
@@ -385,6 +387,7 @@ class CharacterEncodings(Predefined):
     name = "$CharacterEncodings"
     value = "{%s}" % ",".join(map(lambda s: '"%s"' % s, _encodings.keys()))
 
+    summary_text = "CharacterEncodings summary still not available"
     rules = {
         "$CharacterEncodings": value,
     }
@@ -450,6 +453,7 @@ class Alphabet(Builtin):
 
     """
 
+    summary_text = "Alphabet summary still not available"
     messages = {
         "nalph": "The alphabet `` is not known or not available.",
     }
@@ -516,6 +520,7 @@ class LetterNumber(Builtin):
     #  = 2
 
     """
+    summary_text = "LetterNumber summary still not available"
     messages = {
         "nalph": "The alphabet `` is not known or not available.",
         "nas": ("The argument `1` is not a string."),
@@ -704,6 +709,7 @@ class StringRepeat(Builtin):
      = StringRepeat[x, 0]
     """
 
+    summary_text = "StringRepeat summary still not available"
     messages = {
         "intp": "A positive integer is expected at position `1` in `2`.",
     }
@@ -782,6 +788,7 @@ class ToString(Builtin):
 
     """
 
+    summary_text = "ToString summary still not available"
     options = {
         "CharacterEncoding": '"Unicode"',
         "FormatType": "OutputForm",
@@ -820,6 +827,8 @@ class InterpretedBox(PrefixOperator):
 
     operator = "\\!"
     precedence = 670
+
+    summary_text = "InterpretedBox summary still not available"
 
     def apply_dummy(self, boxes, evaluation):
         """InterpretedBox[boxes_]"""
@@ -881,6 +890,7 @@ class ToExpression(Builtin):
     """
     attributes = listable | protected
 
+    summary_text = "ToExpression summary still not available"
     messages = {
         "argb": (
             "`1` called with `2` arguments; "
@@ -973,6 +983,8 @@ class StringQ(Test):
      = {12, yz}
     """
 
+    summary_text = "StringQ summary still not available"
+
     def test(self, expr):
         return isinstance(expr, String)
 
@@ -990,6 +1002,8 @@ class RemoveDiacritics(Builtin):
     >> RemoveDiacritics["piñata"]
      = pinata
     """
+
+    summary_text = "RemoveDiacritics summary still not available"
 
     def apply(self, s, evaluation):
         "RemoveDiacritics[s_String]"
@@ -1026,6 +1040,8 @@ class Transliterate(Builtin):
     # = meter gar te me phesi thea Thetis arguropeza
 
     requires = ("unidecode",)
+
+    summary_text = "Transliterate summary still not available"
 
     def apply(self, s, evaluation):
         "Transliterate[s_String]"
@@ -1151,6 +1167,7 @@ class StringContainsQ(Builtin):
     ## Element F is not a valid string or pattern element in {F ~~ __ ~~ r, aw ~~ ___}.
     """
 
+    summary_text = "StringContainsQ summary still not available"
     options = {
         "IgnoreCase": "False",
     }

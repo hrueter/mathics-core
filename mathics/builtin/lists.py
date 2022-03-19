@@ -99,6 +99,7 @@ class All(Predefined):
     </dl>
     """
 
+    summary_text = "All summary still not available"
     pass
 
 
@@ -126,6 +127,7 @@ class ByteArray(Builtin):
      = $Failed
     """
 
+    summary_text = "ByteArray summary still not available"
     messages = {
         "aotd": "Elements in `1` are inconsistent with type Byte",
         "lend": "The first argument in Bytearray[`1`] should "
@@ -198,6 +200,7 @@ class ContainsOnly(Builtin):
 
     attributes = protected | read_protected
 
+    summary_text = "ContainsOnly summary still not available"
     messages = {
         "lsa": "List or association expected instead of `1`.",
         "nodef": "Unknown option `1` for ContainsOnly.",
@@ -339,6 +342,7 @@ class Delete(Builtin):
      = Delete[{a, b, c, d}, {{1}, {n}}]
     """
 
+    summary_text = "Delete summary still not available"
     messages = {
         "argr": "Delete called with 1 argument; 2 arguments are expected.",
         "argt": "Delete called with `1` arguments; 2 arguments are expected.",
@@ -405,6 +409,7 @@ class Failure(Builtin):
     </dl>
     """
 
+    summary_text = "Failure summary still not available"
     pass
 
 
@@ -425,6 +430,7 @@ class Key(Builtin):
     </dl>
     """
 
+    summary_text = "Key summary still not available"
     rules = {
         "Key[key_][assoc_Association]": "assoc[key]",
     }
@@ -483,6 +489,7 @@ class Level(Builtin):
      = {f, g, h, g[h], x, f[g[h]][x]}
     """
 
+    summary_text = "Level summary still not available"
     options = {
         "Heads": "False",
     }
@@ -523,6 +530,8 @@ class LevelQ(Test):
      = False
     """
 
+    summary_text = "LevelQ summary still not available"
+
     def test(self, ls):
         try:
             start, stop = python_levelspec(ls)
@@ -550,6 +559,8 @@ class List(Builtin):
 
     attributes = locked | protected
 
+    summary_text = "List summary still not available"
+
     def apply_makeboxes(self, items, f, evaluation):
         """MakeBoxes[{items___},
         f:StandardForm|TraditionalForm|OutputForm|InputForm|FullForm]"""
@@ -575,6 +586,8 @@ class ListQ(Test):
      = False
     """
 
+    summary_text = "ListQ summary still not available"
+
     def test(self, expr):
         return expr.get_head_name() == "System`List"
 
@@ -586,6 +599,8 @@ class NotListQ(Test):
         <dd>returns true if $expr$ is not a list.
     </dl>
     """
+
+    summary_text = "NotListQ summary still not available"
 
     def test(self, expr):
         return expr.get_head_name() != "System`List"
@@ -667,6 +682,7 @@ class Split(Builtin):
     #> ClearAll[A];
     """
 
+    summary_text = "Split summary still not available"
     rules = {
         "Split[list_]": "Split[list, SameQ]",
     }
@@ -718,6 +734,7 @@ class SplitBy(Builtin):
      = {{{1, 1, 1}, {1, 1, 2}, {1, 2, 1}, {1, 2, 2}}, {{2, 1, 1}, {2, 1, 2}, {2, 2, 1}, {2, 2, 2}}}
     """
 
+    summary_text = "SplitBy summary still not available"
     rules = {
         "SplitBy[list_]": "SplitBy[list, Identity]",
     }
@@ -800,6 +817,7 @@ class LeafCount(Builtin):
      = LeafCount[1 / 3, 1 + I]
     """
 
+    summary_text = "LeafCount summary still not available"
     messages = {
         "argx": "LeafCount called with `1` arguments; 1 argument is expected.",
     }
@@ -855,6 +873,7 @@ class Position(Builtin):
      = {{2}}
     """
 
+    summary_text = "Position summary still not available"
     options = {"Heads": "True"}
 
     rules = {
@@ -1109,6 +1128,8 @@ class Join(Builtin):
 
     attributes = flat | one_identity | protected
 
+    summary_text = "Join summary still not available"
+
     def apply(self, lists, evaluation):
         "Join[lists___]"
 
@@ -1145,6 +1166,8 @@ class Insert(Builtin):
      = {a, b, c, d, x, e}
     """
 
+    summary_text = "Insert summary still not available"
+
     def apply(self, expr, elem, n, evaluation):
         "Insert[expr_List, elem_, n_Integer]"
 
@@ -1179,6 +1202,7 @@ class UnitVector(Builtin):
      = {0, 0, 1, 0}
     """
 
+    summary_text = "UnitVector summary still not available"
     messages = {
         "nokun": "There is no unit vector in direction `1` in `2` dimensions.",
     }
@@ -1274,6 +1298,7 @@ class IntersectingQ(Builtin):
     </dl>
     """
 
+    summary_text = "IntersectingQ summary still not available"
     rules = {"IntersectingQ[a_List, b_List]": "Length[Intersect[a, b]] > 0"}
 
 
@@ -1285,6 +1310,7 @@ class DisjointQ(Test):
     </dl>
     """
 
+    summary_text = "DisjointQ summary still not available"
     rules = {"DisjointQ[a_List, b_List]": "Not[IntersectingQ[a, b]]"}
 
 
@@ -1304,6 +1330,7 @@ class Fold(Builtin):
      = f[f[f[5, 1], 2], 3]
     """
 
+    summary_text = "Fold summary still not available"
     rules = {
         "Fold[exp_, x_, head_]": "Module[{list = Level[head, 1], res = x, i = 1}, Do[res = exp[res, list[[i]]], {i, 1, Length[list]}]; res]",
         "Fold[exp_, head_] /; Length[head] > 0": "Fold[exp, First[head], Rest[head]]",
@@ -1327,6 +1354,7 @@ class FoldList(Builtin):
      = {1, 2, 6}
     """
 
+    summary_text = "FoldList summary still not available"
     rules = {
         "FoldList[exp_, x_, head_]": "Module[{i = 1}, Head[head] @@ Prepend[Table[Fold[exp, x, Take[head, i]], {i, 1, Length[head]}], x]]",
         "FoldList[exp_, head_]": "If[Length[head] == 0, head, FoldList[exp, First[head], Rest[head]]]",
@@ -1344,6 +1372,7 @@ class CentralMoment(Builtin):  # see https://en.wikipedia.org/wiki/Central_momen
      = 0.100845
     """
 
+    summary_text = "CentralMoment summary still not available"
     rules = {
         "CentralMoment[list_List, r_]": "Total[(list - Mean[list]) ^ r] / Length[list]",
     }
@@ -1391,6 +1420,7 @@ class RankedMin(Builtin):
      = 17
     """
 
+    summary_text = "RankedMin summary still not available"
     messages = {
         "intpm": "Expected positive integer at position 2 in ``.",
         "rank": "The specified rank `1` is not between 1 and `2`.",
@@ -1419,6 +1449,7 @@ class RankedMax(Builtin):
      = 181
     """
 
+    summary_text = "RankedMax summary still not available"
     messages = {
         "intpm": "Expected positive integer at position 2 in ``.",
         "rank": "The specified rank `1` is not between 1 and `2`.",
@@ -1446,6 +1477,7 @@ class Quartiles(Builtin):
      = {27 / 4, 13, 77 / 4}
     """
 
+    summary_text = "Quartiles summary still not available"
     rules = {
         "Quartiles[list_List]": "Quantile[list, {1/4, 1/2, 3/4}, {{1/2, 0}, {0, 1}}]",
     }
@@ -1582,6 +1614,8 @@ class TakeLargest(_RankedTakeLargest):
      = {Missing[abc], 150}
     """
 
+    summary_text = "TakeLargest summary still not available"
+
     def apply(self, leaf, n, evaluation, options):
         "TakeLargest[leaf_List, n_, OptionsPattern[TakeLargest]]"
         return self._compute(leaf, n, evaluation, options)
@@ -1604,6 +1638,8 @@ class TakeLargestBy(_RankedTakeLargest):
      = {abc}
     """
 
+    summary_text = "TakeLargestBy summary still not available"
+
     def apply(self, leaf, f, n, evaluation, options):
         "TakeLargestBy[leaf_List, f_, n_, OptionsPattern[TakeLargestBy]]"
         return self._compute(leaf, n, evaluation, options, f=f)
@@ -1621,6 +1657,8 @@ class TakeSmallest(_RankedTakeSmallest):
     >> TakeSmallest[{100, -1, 50, 10}, 2]
      = {-1, 10}
     """
+
+    summary_text = "TakeSmallest summary still not available"
 
     def apply(self, leaf, n, evaluation, options):
         "TakeSmallest[leaf_List, n_, OptionsPattern[TakeSmallest]]"
@@ -1643,6 +1681,8 @@ class TakeSmallestBy(_RankedTakeSmallest):
     >> TakeSmallestBy[{"abc", "ab", "x"}, StringLength, 1]
      = {x}
     """
+
+    summary_text = "TakeSmallestBy summary still not available"
 
     def apply(self, leaf, f, n, evaluation, options):
         "TakeSmallestBy[leaf_List, f_, n_, OptionsPattern[TakeSmallestBy]]"
@@ -2210,6 +2250,8 @@ class FindClusters(_Cluster):
     Optimize builds the clustering from top down, and uses random sampling.
     """
 
+    summary_text = "FindClusters summary still not available"
+
     def apply(self, p, evaluation, options):
         "FindClusters[p_, OptionsPattern[%(name)s]]"
         return self._cluster(
@@ -2254,6 +2296,8 @@ class ClusteringComponents(_Cluster):
     >> ClusteringComponents[{10, 100, 20}, Method -> "KMeans"]
      = {1, 0, 1}
     """
+
+    summary_text = "ClusteringComponents summary still not available"
 
     def apply(self, p, evaluation, options):
         "ClusteringComponents[p_, OptionsPattern[%(name)s]]"
@@ -2308,6 +2352,7 @@ class Nearest(Builtin):
      = {b}
     """
 
+    summary_text = "Nearest summary still not available"
     options = {
         "DistanceFunction": "Automatic",
         "Method": '"Scan"',
@@ -2460,6 +2505,7 @@ class SubsetQ(Builtin):
      = True
     """
 
+    summary_text = "SubsetQ summary still not available"
     messages = {
         "argr": "SubsetQ called with 1 argument; 2 arguments are expected.",
         "argrx": "SubsetQ called with `1` arguments; 2 arguments are expected.",

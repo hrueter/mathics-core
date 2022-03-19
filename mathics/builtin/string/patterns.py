@@ -195,6 +195,7 @@ class StringCases(_StringFind):
      = {a, ä}
     """
 
+    summary_text = "StringCases summary still not available"
     rules = {
         "StringCases[rule_][string_]": "StringCases[string, rule]",
     }
@@ -236,6 +237,7 @@ class StringExpression(BinaryOperator):
     precedence = 135
     attributes = flat | one_identity | protected
 
+    summary_text = "StringExpression summary still not available"
     messages = {
         "invld": "Element `1` is not a valid string or pattern element in `2`.",
         "cond": "Ignored restriction given for `1` in `2` as it does not match previous occurences of `1`.",
@@ -327,6 +329,7 @@ class StringFreeQ(Builtin):
     ## Element F is not a valid string or pattern element in {F ~~ __ ~~ r, aw ~~ ___}.
     """
 
+    summary_text = "StringFreeQ summary still not available"
     options = {
         "IgnoreCase": "False",
     }
@@ -402,6 +405,7 @@ class StringMatchQ(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "StringMatchQ summary still not available"
     options = {
         "IgnoreCase": "False",
         "SpellingCorrections": "None",

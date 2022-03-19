@@ -135,6 +135,8 @@ class _ArcBox(_RoundBox):
 
 
 class ArrowBox(_Polyline):
+    summary_text = "ArrowBox summary still not available"
+
     def init(self, graphics, style, item=None):
         if not item:
             raise BoxConstructError
@@ -327,6 +329,8 @@ class ArrowBox(_Polyline):
 
 
 class BezierCurveBox(_Polyline):
+    summary_text = "BezierCurveBox summary still not available"
+
     def init(self, graphics, style, item, options):
         super(BezierCurveBox, self).init(graphics, item, style)
         if len(item.elements) != 1 or item.elements[0].get_head_name() != "System`List":
@@ -357,6 +361,7 @@ class GraphicsBox(BoxConstruct):
     Graphics.
     """
 
+    summary_text = "GraphicsBox summary still not available"
     options = Graphics.options
 
     attributes = hold_all | protected | read_protected
@@ -910,6 +915,8 @@ clip(%s);
 
 
 class FilledCurveBox(_GraphicsElement):
+    summary_text = "FilledCurveBox summary still not available"
+
     def init(self, graphics, style, item=None):
         super(FilledCurveBox, self).init(graphics, item, style)
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
@@ -974,6 +981,8 @@ class FilledCurveBox(_GraphicsElement):
 
 
 class InsetBox(_GraphicsElement):
+    summary_text = "InsetBox summary still not available"
+
     def init(
         self,
         graphics,
@@ -1027,6 +1036,8 @@ class LineBox(_Polyline):
     Boxing methods for a list of Line.
     """
 
+    summary_text = "LineBox summary still not available"
+
     def init(self, graphics, style, item=None, lines=None):
         super(LineBox, self).init(graphics, item, style)
         self.edge_color, _ = style.get_style(_Color, face_element=False)
@@ -1049,6 +1060,8 @@ class PointBox(_Polyline):
     edge_color: _Color
     point_radius: radius of each point
     """
+
+    summary_text = "PointBox summary still not available"
 
     def init(self, graphics, style, item=None):
         super(PointBox, self).init(graphics, item, style)
@@ -1089,6 +1102,8 @@ class PointBox(_Polyline):
 
 
 class PolygonBox(_Polyline):
+    summary_text = "PolygonBox summary still not available"
+
     def init(self, graphics, style, item=None):
         super(PolygonBox, self).init(graphics, item, style)
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
@@ -1133,6 +1148,8 @@ class PolygonBox(_Polyline):
 
 
 class RectangleBox(_GraphicsElement):
+    summary_text = "RectangleBox summary still not available"
+
     def init(self, graphics, style, item):
         super(RectangleBox, self).init(graphics, item, style)
         if len(item.elements) not in (1, 2):
@@ -1156,6 +1173,8 @@ class RectangleBox(_GraphicsElement):
 
 
 class RegularPolygonBox(PolygonBox):
+    summary_text = "RegularPolygonBox summary still not available"
+
     def init(self, graphics, style, item):
         if len(item.elements) in (1, 2, 3) and isinstance(item.elements[-1], Integer):
             r = 1.0

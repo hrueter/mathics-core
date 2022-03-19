@@ -150,6 +150,8 @@ class _Get(_HTMLBuiltin):
 
 
 class HTMLGet(_Get):
+    summary_text = "HTMLGet summary still not available"
+
     def _parse(self, text):
         return parse_html_file(text)
 
@@ -162,6 +164,8 @@ class HTMLGetString(_Get):
     #> Head[HTML`Parser`HTMLGetString["<a><b></a>"]]
      = XMLObject[Document]
     """
+
+    summary_text = "HTMLGetString summary still not available"
 
     def _parse(self, text):
         with BytesIO() as f:
@@ -280,6 +284,8 @@ class HyperlinksImport(_LinksImport):
 
     tag_name = "Hyperlinks"
 
+    summary_text = "HyperlinksImport summary still not available"
+
     def _links(self, tree):
         for link in tree.xpath("//a"):
             href = link.get("href")
@@ -294,6 +300,8 @@ class ImageLinksImport(_LinksImport):
     """
 
     tag_name = "ImageLinks"
+
+    summary_text = "ImageLinksImport summary still not available"
 
     def _links(self, tree):
         for link in tree.xpath("//img"):
@@ -310,6 +318,8 @@ class PlaintextImport(_TagImport):
 
     tag_name = "Plaintext"
 
+    summary_text = "PlaintextImport summary still not available"
+
     def _import(self, tree):
         def lines():
             for s in tree.xpath("//text()"):
@@ -325,6 +335,8 @@ class SourceImport(_HTMLBuiltin):
     >> DeleteDuplicates[StringCases[Import["ExampleData/PrimeMeridian.html", "Source"], RegularExpression["<t[a-z]+>"]]]
      = {<title>, <tr>, <th>, <td>}
     """
+
+    summary_text = "SourceImport summary still not available"
 
     def apply(self, text, evaluation):
         """%(name)s[text_String]"""
@@ -346,6 +358,8 @@ class TitleImport(_TagImport):
 
     tag_name = "Title"
 
+    summary_text = "TitleImport summary still not available"
+
     def _import(self, tree):
         for node in tree.xpath("//title"):
             return String(node.text_content())
@@ -357,6 +371,8 @@ class XMLObjectImport(_HTMLBuiltin):
     >> Part[Import["ExampleData/PrimeMeridian.html", "XMLObject"], 2, 3, 1, 3, 2]
      = XMLElement[title, {}, {Prime meridian - Wikipedia}]
     """
+
+    summary_text = "XMLObjectImport summary still not available"
 
     def apply(self, text, evaluation):
         """%(name)s[text_String]"""

@@ -202,6 +202,7 @@ class Show(Builtin):
      = ...
     """
 
+    summary_text = "Show summary still not available"
     options = GRAPHICS_OPTIONS
 
     def apply(self, graphics, evaluation, options):
@@ -272,6 +273,7 @@ class Graphics(Builtin):
      . \end{asy}
     """
 
+    summary_text = "Graphics summary still not available"
     options = GRAPHICS_OPTIONS
 
     box_suffix = "Box"
@@ -368,6 +370,8 @@ class AbsoluteThickness(_Thickness):
      = -Graphics-
     """
 
+    summary_text = "AbsoluteThickness summary still not available"
+
     def get_thickness(self):
         return self.graphics.translate_absolute((self.value, 0))[0]
 
@@ -384,6 +388,8 @@ class Thickness(_Thickness):
      = -Graphics-
     """
 
+    summary_text = "Thickness summary still not available"
+
     def get_thickness(self):
         return self.graphics.translate_relative(self.value)
 
@@ -396,6 +402,7 @@ class Thin(Builtin):
     </dl>
     """
 
+    summary_text = "Thin summary still not available"
     rules = {"Thin": "AbsoluteThickness[0.5]"}
 
 
@@ -407,6 +414,7 @@ class Thick(Builtin):
     </dl>
     """
 
+    summary_text = "Thick summary still not available"
     rules = {"Thick": "AbsoluteThickness[2]"}
 
 
@@ -425,6 +433,8 @@ class PointSize(_Size):
     = {-Graphics3D-, -Graphics3D-, -Graphics3D-}
     """
 
+    summary_text = "PointSize summary still not available"
+
     def get_absolute_size(self):
         if self.graphics.view_width is None:
             self.graphics.view_width = 400
@@ -441,10 +451,12 @@ class FontColor(Builtin):
     </dl>
     """
 
+    summary_text = "FontColor summary still not available"
     pass
 
 
 class Offset(Builtin):
+    summary_text = "Offset summary still not available"
     pass
 
 
@@ -464,6 +476,7 @@ class Rectangle(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Rectangle summary still not available"
     rules = {"Rectangle[]": "Rectangle[{0, 0}]"}
 
 
@@ -495,6 +508,7 @@ class Disk(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Disk summary still not available"
     rules = {"Disk[]": "Disk[{0, 0}]"}
 
 
@@ -524,10 +538,12 @@ class Circle(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Circle summary still not available"
     rules = {"Circle[]": "Circle[{0, 0}]"}
 
 
 class Inset(Builtin):
+    summary_text = "Inset summary still not available"
     pass
 
 
@@ -608,6 +624,7 @@ class Point(Builtin):
 
     """
 
+    summary_text = "Point summary still not available"
     pass
 
 
@@ -629,6 +646,7 @@ class Line(Builtin):
     = -Graphics3D-
     """
 
+    summary_text = "Line summary still not available"
     pass
 
 
@@ -678,6 +696,7 @@ class FilledCurve(Builtin):
     = -Graphics-
     """
 
+    summary_text = "FilledCurve summary still not available"
     pass
 
 
@@ -705,6 +724,7 @@ class Polygon(Builtin):
     = -Graphics3D-
     """
 
+    summary_text = "Polygon summary still not available"
     pass
 
 
@@ -762,6 +782,7 @@ class Arrow(Builtin):
      = {-Graphics-, -Graphics-, -Graphics-, -Graphics-, -Graphics-}
     """
 
+    summary_text = "Arrow summary still not available"
     pass
 
 
@@ -804,6 +825,8 @@ class Arrowheads(_GraphicsElement):
         "System`Medium": 9,
         "System`Large": 18,
     }
+
+    summary_text = "Arrowheads summary still not available"
 
     def init(self, graphics, item=None):
         super(Arrowheads, self).init(graphics, item)
@@ -1024,10 +1047,12 @@ class EdgeForm(Builtin):
      = -Graphics-
     """
 
+    summary_text = "EdgeForm summary still not available"
     pass
 
 
 class FaceForm(Builtin):
+    summary_text = "FaceForm summary still not available"
     pass
 
 

@@ -63,6 +63,7 @@ class AbsoluteFileName(Builtin):
      = $Failed
     """
 
+    summary_text = "AbsoluteFileName summary still not available"
     messages = {
         "fstr": ("File specification x is not a string of one or more characters."),
         "nffil": "File not found during `1`.",
@@ -102,6 +103,8 @@ class BaseDirectory(Predefined):
 
     name = "$BaseDirectory"
 
+    summary_text = "BaseDirectory summary still not available"
+
     def evaluate(self, evaluation):
         global ROOT_DIR
         return String(ROOT_DIR)
@@ -115,6 +118,7 @@ class CopyDirectory(Builtin):
     </dl>
     """
 
+    summary_text = "CopyDirectory summary still not available"
     messages = {
         "argr": "called with `1` argument; 2 arguments are expected.",
         "fstr": (
@@ -167,6 +171,7 @@ class CopyFile(Builtin):
     X> DeleteFile["MathicsSunflowers.jpg"]
     """
 
+    summary_text = "CopyFile summary still not available"
     messages = {
         "filex": "Cannot overwrite existing file `1`.",
         "fstr": (
@@ -231,6 +236,7 @@ class CreateDirectory(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "CreateDirectory summary still not available"
     options = {
         "CreateIntermediateDirectories": "True",
     }
@@ -283,6 +289,7 @@ class CreateFile(Builtin):
     </dl>
     """
 
+    summary_text = "CreateFile summary still not available"
     rules = {
         "CreateFile[]": "CreateTemporary[]",
     }
@@ -316,6 +323,8 @@ class CreateTemporary(Builtin):
     </dl>
     """
 
+    summary_text = "CreateTemporary summary still not available"
+
     def apply_0(self, evaluation):
         "CreateTemporary[]"
         try:
@@ -341,6 +350,7 @@ class DeleteDirectory(Builtin):
      = $Failed
     """
 
+    summary_text = "DeleteDirectory summary still not available"
     options = {
         "DeleteContents": "False",
     }
@@ -404,6 +414,7 @@ class DeleteFile(Builtin):
     >> DeleteFile[{"MathicsSunflowers1.jpg", "MathicsSunflowers2.jpg"}]
     """
 
+    summary_text = "DeleteFile summary still not available"
     messages = {
         "filex": "Cannot overwrite existing file `1`.",
         "strs": (
@@ -458,6 +469,8 @@ class Directory(Builtin):
     = ...
     """
 
+    summary_text = "Directory summary still not available"
+
     def apply(self, evaluation):
         "Directory[]"
         result = os.getcwd()
@@ -495,6 +508,7 @@ class DirectoryName(Builtin):
      = DirectoryName[x]
     """
 
+    summary_text = "DirectoryName summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -546,6 +560,8 @@ class DirectoryStack(Builtin):
     = ...
     """
 
+    summary_text = "DirectoryStack summary still not available"
+
     def apply(self, evaluation):
         "DirectoryStack[]"
         global DIRECTORY_STACK
@@ -571,6 +587,7 @@ class DirectoryQ(Builtin):
      = False
     """
 
+    summary_text = "DirectoryQ summary still not available"
     messages = {
         "fstr": (
             "File specification `1` is not a string of " "one or more characters."
@@ -604,6 +621,7 @@ class ExpandFileName(Builtin):
      = ...
     """
 
+    summary_text = "ExpandFileName summary still not available"
     messages = {
         "string": "String expected at position 1 in `1`.",
     }
@@ -624,6 +642,7 @@ class ExpandFileName(Builtin):
 
 
 class File(Builtin):
+    summary_text = "File summary still not available"
     pass
 
 
@@ -647,6 +666,7 @@ class FileBaseName(Builtin):
      = file
     """
 
+    summary_text = "FileBaseName summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -670,6 +690,7 @@ class FileByteCount(Builtin):
      = 142286
     """
 
+    summary_text = "FileByteCount summary still not available"
     messages = {
         "fstr": "File specification `1` is not a string of one or more characters.",
     }
@@ -739,6 +760,7 @@ class FileDate(Builtin):
      = FileDate[ExampleData/sunflowers.jpg, Fail]
     """
 
+    summary_text = "FileDate summary still not available"
     messages = {
         "nffil": "File not found during `1`.",
         "datetype": (
@@ -815,6 +837,7 @@ class FileExistsQ(Builtin):
      = False
     """
 
+    summary_text = "FileExistsQ summary still not available"
     messages = {
         "fstr": (
             "File specification `1` is not a string of " "one or more characters."
@@ -855,6 +878,7 @@ class FileExtension(Builtin):
      = #<--#
     """
 
+    summary_text = "FileExtension summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -910,6 +934,7 @@ class FileHash(Builtin):
      = FileHash[xyzsymbol]
     """
 
+    summary_text = "FileHash summary still not available"
     rules = {
         "FileHash[filename_String]": 'FileHash[filename, "MD5", "Integer"]',
         "FileHash[filename_String, hashtype_String]": 'FileHash[filename, hashtype, "Integer"]',
@@ -954,6 +979,7 @@ class FileInformation(Builtin):
      = {}
     """
 
+    summary_text = "FileInformation summary still not available"
     rules = {
         "FileInformation[name_String]": "If[FileExistsQ[name], {File -> ExpandFileName[name], FileType -> FileType[name], ByteCount -> FileByteCount[name], Date -> AbsoluteTime[FileDate[name]]}, {}]",
     }
@@ -979,6 +1005,7 @@ class FileNameDepth(Builtin):
      = 0
     """
 
+    summary_text = "FileNameDepth summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -1008,6 +1035,7 @@ class FileNameJoin(Builtin):
      = dir1\\dir2\\dir3
     """
 
+    summary_text = "FileNameJoin summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -1077,6 +1105,7 @@ class FileType(Builtin):
      = FileType[x]
     """
 
+    summary_text = "FileType summary still not available"
     messages = {
         "fstr": (
             "File specification `1` is not a string of " "one or more characters."
@@ -1121,6 +1150,7 @@ class FindFile(Builtin):
      = $Failed
     """
 
+    summary_text = "FindFile summary still not available"
     messages = {
         "string": "String expected at position 1 in `1`.",
     }
@@ -1171,6 +1201,7 @@ class FileNames(Builtin):
     # >> FileNames[]//Length
     #  = 2
     fmtmaps = {Symbol("System`All"): "*"}
+    summary_text = "FileNames summary still not available"
     options = {
         "IgnoreCase": "Automatic",
     }
@@ -1296,6 +1327,7 @@ class FileNameSplit(Builtin):
      = {example, path}
     """
 
+    summary_text = "FileNameSplit summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -1363,6 +1395,7 @@ class FileNameTake(Builtin):
     # >> FileNameTake["tmp/file.txt", -1]
     #  = file.txt
 
+    summary_text = "FileNameTake summary still not available"
     options = {
         "OperatingSystem": "$OperatingSystem",
     }
@@ -1408,6 +1441,7 @@ class FindList(Builtin):
      = $Failed
     """
 
+    summary_text = "FindList summary still not available"
     messages = {
         "strs": "String or non-empty list of strings expected at position `1` in `2`.",
         "intnm": "Non-negative machine-sized integer expected at position `1` in `2`.",
@@ -1503,6 +1537,8 @@ class HomeDirectory(Predefined):
 
     name = "$HomeDirectory"
 
+    summary_text = "HomeDirectory summary still not available"
+
     def evaluate(self, evaluation):
         global HOME_DIR
         return String(HOME_DIR)
@@ -1521,6 +1557,8 @@ class InitialDirectory(Predefined):
 
     name = "$InitialDirectory"
 
+    summary_text = "InitialDirectory summary still not available"
+
     def evaluate(self, evaluation):
         global INITIAL_DIR
         return String(INITIAL_DIR)
@@ -1538,6 +1576,8 @@ class InstallationDirectory(Predefined):
 
     attributes = no_attributes
     name = "$InstallationDirectory"
+
+    summary_text = "InstallationDirectory summary still not available"
 
     def evaluate(self, evaluation):
         global ROOT_DIR
@@ -1645,6 +1685,7 @@ class Needs(Builtin):
      = {{Cos[Ttheta], -Rr Sin[Ttheta], 0}, {Sin[Ttheta], Rr Cos[Ttheta], 0}, {0, 0, 1}}
     """
 
+    summary_text = "Needs summary still not available"
     messages = {
         "ctx": (
             "Invalid context specified at position `2` in `1`. "
@@ -1694,6 +1735,8 @@ class OperatingSystem(Predefined):
     attributes = locked | protected
     name = "$OperatingSystem"
 
+    summary_text = "OperatingSystem summary still not available"
+
     def evaluate(self, evaluation):
         if os.name == "posix":
             return String("Unix")
@@ -1718,6 +1761,7 @@ class ParentDirectory(Builtin):
      = ...
     """
 
+    summary_text = "ParentDirectory summary still not available"
     rules = {
         "ParentDirectory[]": "ParentDirectory[Directory[]]",
     }
@@ -1755,6 +1799,8 @@ class Path(Predefined):
     attributes = no_attributes
     name = "$Path"
 
+    summary_text = "Path summary still not available"
+
     def evaluate(self, evaluation):
         return Expression(SymbolList, *[String(p) for p in PATH_VAR])
 
@@ -1772,6 +1818,8 @@ class PathnameSeparator(Predefined):
 
     name = "$PathnameSeparator"
 
+    summary_text = "PathnameSeparator summary still not available"
+
     def evaluate(self, evaluation):
         return String(os.sep)
 
@@ -1784,6 +1832,7 @@ class RenameDirectory(Builtin):
     </dl>
     """
 
+    summary_text = "RenameDirectory summary still not available"
     messages = {
         "argr": "called with `1` argument; 2 arguments are expected.",
         "fstr": (
@@ -1838,6 +1887,7 @@ class RenameFile(Builtin):
     >> DeleteFile["MathicsSunnyFlowers.jpg"]
     """
 
+    summary_text = "RenameFile summary still not available"
     messages = {
         "filex": "Cannot overwrite existing file `1`.",
         "fstr": (
@@ -1893,6 +1943,7 @@ class ResetDirectory(Builtin):
     = ...
     """
 
+    summary_text = "ResetDirectory summary still not available"
     messages = {
         "dtop": "Directory stack is empty.",
     }
@@ -1922,6 +1973,8 @@ class RootDirectory(Predefined):
 
     name = "$RootDirectory"
 
+    summary_text = "RootDirectory summary still not available"
+
     def evaluate(self, evaluation):
         global SYS_ROOT_DIR
         return String(SYS_ROOT_DIR)
@@ -1942,6 +1995,7 @@ class SetDirectory(Builtin):
      = $Failed
     """
 
+    summary_text = "SetDirectory summary still not available"
     rules = {
         "SetDirectory[]": "SetDirectory[$HomeDirectory]",
     }
@@ -2011,6 +2065,7 @@ class SetFileDate(Builtin):
      = $Failed
     """
 
+    summary_text = "SetFileDate summary still not available"
     messages = {
         "fstr": (
             "File specification `1` is not a string of one or " "more characters."
@@ -2128,6 +2183,8 @@ class TemporaryDirectory(Predefined):
 
     name = "$TemporaryDirectory"
 
+    summary_text = "TemporaryDirectory summary still not available"
+
     def evaluate(self, evaluation):
         return String(TMP_DIR)
 
@@ -2151,6 +2208,7 @@ class ToFileName(Builtin):
      = dir1...dir2...dir3
     """
 
+    summary_text = "ToFileName summary still not available"
     rules = {
         "ToFileName[dir_String, name_String]": "FileNameJoin[{dir, name}]",
         "ToFileName[dirs_List, name_String]": "FileNameJoin[Append[dirs, name]]",
@@ -2171,6 +2229,8 @@ class UserBaseDirectory(Predefined):
 
     name = "$UserBaseDirectory"
 
+    summary_text = "UserBaseDirectory summary still not available"
+
     def evaluate(self, evaluation):
         global HOME_DIR
         return String(HOME_DIR + os.sep + ".mathics")
@@ -2186,6 +2246,7 @@ class URLSave(Builtin):
     </dl>
     """
 
+    summary_text = "URLSave summary still not available"
     messages = {
         "invfile": "`1` is not a valid Filename",
         "invhttp": "`1` is not a valid URL",

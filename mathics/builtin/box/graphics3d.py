@@ -35,6 +35,8 @@ class Graphics3DBox(GraphicsBox):
     a Graphics3D object.
     """
 
+    summary_text = "Graphics3DBox summary still not available"
+
     def _prepare_elements(self, leaves, options, max_width=None):
         if not leaves:
             raise BoxConstructError
@@ -691,6 +693,8 @@ currentlight=light(rgb(0.5,0.5,1), specular=red, (2,0,2), (2,2,2), (0,2,2));
 
 
 class Arrow3DBox(ArrowBox):
+    summary_text = "Arrow3DBox summary still not available"
+
     def init(self, *args, **kwargs):
         super(Arrow3DBox, self).init(*args, **kwargs)
 
@@ -711,6 +715,8 @@ class Cone3DBox(InstanceableBuiltin):
     """
     Internal Python class used when Boxing a 'Cone' object.
     """
+
+    summary_text = "Cone3DBox summary still not available"
 
     def init(self, graphics, style, item):
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
@@ -756,6 +762,8 @@ class Cuboid3DBox(InstanceableBuiltin):
     Internal Python class used when Boxing a 'Cuboid' object.
     """
 
+    summary_text = "Cuboid3DBox summary still not available"
+
     def init(self, graphics, style, item):
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
 
@@ -783,6 +791,8 @@ class Cylinder3DBox(InstanceableBuiltin):
     """
     Internal Python class used when Boxing a 'Cylinder' object.
     """
+
+    summary_text = "Cylinder3DBox summary still not available"
 
     def init(self, graphics, style, item):
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
@@ -824,6 +834,8 @@ class Cylinder3DBox(InstanceableBuiltin):
 
 
 class Line3DBox(LineBox):
+    summary_text = "Line3DBox summary still not available"
+
     def init(self, *args, **kwargs):
         super(Line3DBox, self).init(*args, **kwargs)
 
@@ -841,6 +853,8 @@ class Line3DBox(LineBox):
 
 
 class Point3DBox(PointBox):
+    summary_text = "Point3DBox summary still not available"
+
     def get_default_face_color(self):
         return RGBColor(components=(0, 0, 0, 1))
 
@@ -867,6 +881,8 @@ class Point3DBox(PointBox):
 
 
 class Polygon3DBox(PolygonBox):
+    summary_text = "Polygon3DBox summary still not available"
+
     def init(self, *args, **kwargs):
         self.vertex_normals = None
         super(Polygon3DBox, self).init(*args, **kwargs)
@@ -889,6 +905,8 @@ class Polygon3DBox(PolygonBox):
 
 
 class Sphere3DBox(InstanceableBuiltin):
+    summary_text = "Sphere3DBox summary still not available"
+
     def init(self, graphics, style, item):
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
         if len(item.leaves) != 2:
@@ -928,6 +946,8 @@ class Sphere3DBox(InstanceableBuiltin):
 
 
 class Tube3DBox(InstanceableBuiltin):
+    summary_text = "Tube3DBox summary still not available"
+
     def init(self, graphics, style, item):
         self.edge_color, self.face_color = style.get_style(_Color, face_element=True)
 

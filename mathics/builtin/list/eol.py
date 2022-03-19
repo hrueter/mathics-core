@@ -74,6 +74,8 @@ class Append(Builtin):
      = Append[a, b]
     """
 
+    summary_text = "Append summary still not available"
+
     def apply(self, expr, item, evaluation):
         "Append[expr_, item_]"
 
@@ -119,6 +121,7 @@ class AppendTo(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "AppendTo summary still not available"
     messages = {
         "rvalue": "`1` is not a variable with a value, so its value cannot be changed.",
     }
@@ -185,6 +188,7 @@ class Cases(Builtin):
      = {y}
     """
 
+    summary_text = "Cases summary still not available"
     rules = {
         "Cases[pattern_][list_]": "Cases[list, pattern]",
     }
@@ -258,6 +262,7 @@ class Count(Builtin):
      = 5
     """
 
+    summary_text = "Count summary still not available"
     rules = {
         "Count[pattern_][list_]": "Count[list, pattern]",
         "Count[list_, arguments__]": "Length[Cases[list, arguments]]",
@@ -288,6 +293,7 @@ class DeleteCases(Builtin):
      = {1}
     """
 
+    summary_text = "DeleteCases summary still not available"
     messages = {
         "level": "Level specification `1` is not of the form n, {n}, or {m, n}.",
         "innf": "Non-negative integer or Infinity expected at position 4 in `1`",
@@ -391,6 +397,7 @@ class Drop(Builtin):
      = Drop[{1, 2, 3, 4, 5, 6}, {-5, -2, -2}]
     """
 
+    summary_text = "Drop summary still not available"
     messages = {
         "normal": "Nonatomic expression expected at position `1` in `2`.",
         "drop": "Cannot drop positions `1` through `2` in `3`.",
@@ -433,6 +440,7 @@ class First(Builtin):
      = First[{}]
     """
 
+    summary_text = "First summary still not available"
     messages = {
         "normal": "Nonatomic expression expected.",
         "nofirst": "`1` has zero length and no first element.",
@@ -473,6 +481,7 @@ class FirstCase(Builtin):
     """
 
     attributes = hold_rest | protected
+    summary_text = "FirstCase summary still not available"
     options = Cases.options
     rules = {
         'FirstCase[expr_, pattOrRule_, Shortest[default_:Missing["NotFound"], 1],Shortest[levelspec_:{1}, 2], opts:OptionsPattern[]]': "Replace[Cases[expr, pattOrRule, levelspec, 1, opts],{{} :> default, {match_} :> match}]",
@@ -500,6 +509,7 @@ class Extract(Builtin):
 
     attributes = n_hold_rest | protected
 
+    summary_text = "Extract summary still not available"
     rules = {
         "Extract[expr_, list_List]": "Part[expr, Sequence @@ list]",
         "Extract[expr_, {lists___List}]": "Extract[expr, #]& /@ {lists}",
@@ -576,6 +586,7 @@ class FirstPosition(Builtin):
 
     """
 
+    summary_text = "FirstPosition summary still not available"
     messages = {
         "level": "Level specification `1` is not of the form n, {n}, or {m, n}.",
     }
@@ -679,6 +690,7 @@ class Last(Builtin):
      = Last[{}]
     """
 
+    summary_text = "Last summary still not available"
     messages = {
         "normal": "Nonatomic expression expected.",
         "nolast": "`1` has zero length and no last element.",
@@ -726,6 +738,8 @@ class Length(Builtin):
      = Rational[1, 3]
     """
 
+    summary_text = "Length summary still not available"
+
     def apply(self, expr, evaluation):
         "Length[expr_]"
 
@@ -752,6 +766,7 @@ class MemberQ(Builtin):
      = True
     """
 
+    summary_text = "MemberQ summary still not available"
     rules = {
         "MemberQ[list_, pattern_]": ("Length[Select[list, MatchQ[#, pattern]&]] > 0"),
         "MemberQ[pattern_][expr_]": "MemberQ[expr, pattern]",
@@ -780,6 +795,8 @@ class Most(Builtin):
      = 7
     #> ClearAll[A];
     """
+
+    summary_text = "Most summary still not available"
 
     def apply(self, expr, evaluation):
         "Most[expr_]"
@@ -902,6 +919,8 @@ class Part(Builtin):
 
     attributes = n_hold_rest | protected | read_protected
 
+    summary_text = "Part summary still not available"
+
     def apply_makeboxes(self, list, i, f, evaluation):
         """MakeBoxes[Part[list_, i___],
         f:StandardForm|TraditionalForm|OutputForm|InputForm]"""
@@ -981,6 +1000,8 @@ class Pick(Builtin):
      = {a, b, d}
     """
 
+    summary_text = "Pick summary still not available"
+
     def _do(self, items0, sel0, match, evaluation):
         def pick(items, sel):
             for x, s in zip(items, sel):
@@ -1034,6 +1055,8 @@ class Prepend(Builtin):
      : Nonatomic expression expected.
      = Prepend[a, b]
     """
+
+    summary_text = "Prepend summary still not available"
 
     def apply(self, expr, item, evaluation):
         "Prepend[expr_, item_]"
@@ -1091,6 +1114,7 @@ class PrependTo(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "PrependTo summary still not available"
     messages = {
         "rvalue": "`1` is not a variable with a value, so its value cannot be changed.",
         "normal": "Nonatomic expression expected at position 1 in `1`.",
@@ -1148,6 +1172,7 @@ class ReplacePart(Builtin):
      = {a, b, t}
     """
 
+    summary_text = "ReplacePart summary still not available"
     messages = {
         "reps": "`1` is not a list of replacement rules.",
     }
@@ -1223,6 +1248,7 @@ class Rest(Builtin):
      = Rest[{}]
     """
 
+    summary_text = "Rest summary still not available"
     messages = {
         "normal": "Nonatomic expression expected.",
         "norest": "Cannot take Rest of expression `1` with length zero.",
@@ -1340,6 +1366,7 @@ class Take(Builtin):
      = Take[{1, 2, 3, 4, 5}, {1, 0, -1}]
     """
 
+    summary_text = "Take summary still not available"
     messages = {
         "normal": "Nonatomic expression expected at position `1` in `2`.",
     }
@@ -1384,6 +1411,8 @@ class Select(Builtin):
      = 31415
     #> ClearAll[A];
     """
+
+    summary_text = "Select summary still not available"
 
     def apply(self, items, expr, evaluation):
         "Select[items_, expr_]"

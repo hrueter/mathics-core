@@ -76,6 +76,7 @@ class Tr(Builtin):
      = a + e + i
     """
 
+    summary_text = "Tr summary still not available"
     messages = {"matsq": "The matrix `1` is not square."}
 
     # TODO: generalize to vectors and higher-rank tensors, and allow function arguments for application
@@ -105,6 +106,8 @@ class Det(Builtin):
      = a e i - a f h - b d i + b f g + c d h - c e g
     """
 
+    summary_text = "Det summary still not available"
+
     def apply(self, m, evaluation):
         "Det[m_]"
 
@@ -133,6 +136,7 @@ class Cross(Builtin):
      = Cross[{1, 2}, {3, 4, 5}]
     """
 
+    summary_text = "Cross summary still not available"
     rules = {"Cross[{x_, y_}]": "{-y, x}"}
 
     messages = {
@@ -178,6 +182,7 @@ class VectorAngle(Builtin):
      = 0
     """
 
+    summary_text = "VectorAngle summary still not available"
     rules = {"VectorAngle[u_, v_]": "ArcCos[u.v / (Norm[u] Norm[v])]"}
 
 
@@ -196,6 +201,7 @@ class Inverse(Builtin):
 
     """
 
+    summary_text = "Inverse summary still not available"
     messages = {
         "sing": "The matrix `1` is singular.",
         "matsq": "Argument `1` at position 1 is not " "a non-empty square matrix.",
@@ -256,6 +262,7 @@ class SingularValueDecomposition(Builtin):
      = {{-3, 2, 0}, {2, -1, 0}, {1, -2, 1}}
     """
 
+    summary_text = "SingularValueDecomposition summary still not available"
     messages = {
         "nosymb": "Symbolic SVD is not implemented, performing numerically.",
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix.",
@@ -295,6 +302,7 @@ class QRDecomposition(Builtin):
      = QRDecomposition[{1, {2}}]
     """
 
+    summary_text = "QRDecomposition summary still not available"
     messages = {
         "sympy": "Sympy is unable to perform the QR decomposition.",
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix.",
@@ -336,6 +344,7 @@ class PseudoInverse(Builtin):
     = PseudoInverse[{1, {2}}]
     """
 
+    summary_text = "PseudoInverse summary still not available"
     messages = {
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix."
     }
@@ -381,6 +390,7 @@ class LeastSquares(Builtin):
      = LeastSquares[{{1, 2}, {3, 4}}, {1, {2}}]
     """
 
+    summary_text = "LeastSquares summary still not available"
     messages = {
         "underdetermined": "Solving for underdetermined system not implemented.",
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix.",
@@ -434,6 +444,7 @@ class LinearSolve(Builtin):
      = LinearSolve[{{1, 2}, {3, 4}}, {1, {2}}]
     """
 
+    summary_text = "LinearSolve summary still not available"
     messages = {
         "lslc": (
             "Coefficient matrix and target vector(s) or matrix "
@@ -478,6 +489,7 @@ class LinearSolve(Builtin):
 
 
 class FittedModel(Builtin):
+    summary_text = "FittedModel summary still not available"
     rules = {
         "FittedModel[x_List][s_String]": "s /. x",
         "FittedModel[x_List][y_]": '("Function" /. x)[y]',
@@ -503,6 +515,7 @@ class DesignMatrix(Builtin):
      = {{1, f[2]}, {1, f[3]}, {1, f[5]}, {1, f[7]}}
     """
 
+    summary_text = "DesignMatrix summary still not available"
     rules = {
         "DesignMatrix[m_, f_List, x_?AtomQ]": "DesignMatrix[m, {f}, ConstantArray[x, Length[f]]]",
         "DesignMatrix[m_, f_, x_?AtomQ]": "DesignMatrix[m, {f}, {x}]",
@@ -557,6 +570,7 @@ class LinearModelFit(Builtin):
     # see the paper "Regression by linear combination of basis functions" by Risi Kondor for a good
     # summary of the math behind this
 
+    summary_text = "LinearModelFit summary still not available"
     rules = {
         "LinearModelFit[data_, f_, x_?AtomQ]": "LinearModelFit[data, {f}, {x}]",
         "LinearModelFit[data_, f_List, x_List] /; Length[f] == Length[x]": """
@@ -609,6 +623,7 @@ class NullSpace(Builtin):
      = NullSpace[{1, {2}}]
     """
 
+    summary_text = "NullSpace summary still not available"
     messages = {
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix."
     }
@@ -648,6 +663,7 @@ class RowReduce(Builtin):
      = RowReduce[{{1, 0}, {0}}]
     """
 
+    summary_text = "RowReduce summary still not available"
     messages = {
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix."
     }
@@ -681,6 +697,7 @@ class MatrixRank(Builtin):
      = MatrixRank[{{1, 0}, {0}}]
     """
 
+    summary_text = "MatrixRank summary still not available"
     messages = {
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix."
     }
@@ -727,6 +744,7 @@ class Eigenvalues(Builtin):
     sympy_name = "eigenvalues"
     mpmath_name = "eig"
 
+    summary_text = "Eigenvalues summary still not available"
     messages = {
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix."
     }
@@ -801,6 +819,7 @@ class Eigensystem(Builtin):
      = {{2, -1, 1}, {{1, 1, 1}, {1, -2, 1}, {-1, 0, 1}}}
     """
 
+    summary_text = "Eigensystem summary still not available"
     rules = {"Eigensystem[m_]": "{Eigenvalues[m], Eigenvectors[m]}"}
 
 
@@ -825,6 +844,7 @@ class MatrixPower(Builtin):
      = MatrixPower[{{1, 0}, {0}}, 2]
     """
 
+    summary_text = "MatrixPower summary still not available"
     messages = {
         "matrixpowernotimplemented": "Matrix power not implemented for matrix `1`.",
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix.",
@@ -871,6 +891,7 @@ class MatrixExp(Builtin):
      = MatrixExp[{{1, 0}, {0}}]
     """
 
+    summary_text = "MatrixExp summary still not available"
     messages = {
         "matrixexpnotimplemented": ("Matrix power not implemented for matrix `1`."),
         "matrix": "Argument `1` at position `2` is not a non-empty rectangular matrix.",
@@ -940,6 +961,7 @@ class Norm(Builtin):
      = 0
     """
 
+    summary_text = "Norm summary still not available"
     rules = {
         "Norm[m_?NumberQ]": "Abs[m]",
         "Norm[m_?VectorQ, DirectedInfinity[1]]": "Max[Abs[m]]",
@@ -1012,6 +1034,7 @@ class Normalize(Builtin):
      = {}
     """
 
+    summary_text = "Normalize summary still not available"
     rules = {"Normalize[v_]": "Module[{norm = Norm[v]}, If[norm == 0, v, v / norm, v]]"}
 
 
@@ -1040,6 +1063,7 @@ class Eigenvectors(Builtin):
      = {{1, 7, 3}, {1, 1, 0}, {0, 0, 0}}
     """
 
+    summary_text = "Eigenvectors summary still not available"
     messages = {
         "eigenvecnotimplemented": (
             "Eigenvectors is not yet implemented for the matrix `1`."
@@ -1121,6 +1145,8 @@ class EuclideanDistance(Builtin):
      = Sqrt[Abs[a - c] ^ 2 + Abs[b - d] ^ 2]
     """
 
+    summary_text = "EuclideanDistance summary still not available"
+
     def apply(self, u, v, evaluation):
         "EuclideanDistance[u_, v_]"
         t = _norm_calc("Subtract", u, v, evaluation)
@@ -1141,6 +1167,8 @@ class SquaredEuclideanDistance(Builtin):
     >> SquaredEuclideanDistance[{-1, -1}, {1, 1}]
      = 8
     """
+
+    summary_text = "SquaredEuclideanDistance summary still not available"
 
     def apply(self, u, v, evaluation):
         "SquaredEuclideanDistance[u_, v_]"
@@ -1164,6 +1192,8 @@ class ManhattanDistance(Builtin):
      = 4
     """
 
+    summary_text = "ManhattanDistance summary still not available"
+
     def apply(self, u, v, evaluation):
         "ManhattanDistance[u_, v_]"
         t = _norm_calc("Subtract", u, v, evaluation)
@@ -1186,6 +1216,8 @@ class ChessboardDistance(Builtin):
      = 2
     """
 
+    summary_text = "ChessboardDistance summary still not available"
+
     def apply(self, u, v, evaluation):
         "ChessboardDistance[u_, v_]"
         t = _norm_calc("Subtract", u, v, evaluation)
@@ -1207,6 +1239,8 @@ class CanberraDistance(Builtin):
     >> CanberraDistance[{-1, -1}, {1, 1}]
      = 2
     """
+
+    summary_text = "CanberraDistance summary still not available"
 
     def apply(self, u, v, evaluation):
         "CanberraDistance[u_, v_]"
@@ -1236,6 +1270,8 @@ class BrayCurtisDistance(Builtin):
      = 11 / 9
     """
 
+    summary_text = "BrayCurtisDistance summary still not available"
+
     def apply(self, u, v, evaluation):
         "BrayCurtisDistance[u_, v_]"
         t = _norm_calc("Subtract", u, v, evaluation)
@@ -1260,6 +1296,8 @@ class CosineDistance(Builtin):
     >> CosineDistance[{a, b}, {c, d}]
      = 1 + (-a c - b d) / (Sqrt[Abs[a] ^ 2 + Abs[b] ^ 2] Sqrt[Abs[c] ^ 2 + Abs[d] ^ 2])
     """
+
+    summary_text = "CosineDistance summary still not available"
 
     def apply(self, u, v, evaluation):
         "CosineDistance[u_, v_]"

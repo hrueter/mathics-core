@@ -254,6 +254,7 @@ class LoadModule(Builtin):
     """
 
     name = "LoadModule"
+    summary_text = "LoadModule summary still not available"
     messages = {
         "notfound": "Python module `1` does not exist.",
         "notmathicslib": "Python module `1` is not a pymathics module.",

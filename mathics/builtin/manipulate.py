@@ -71,6 +71,7 @@ class ManipulateParameter(
 ):  # parses one Manipulate[] parameter spec, e.g. {x, 1, 2}, see _WidgetInstantiator
     context = "System`Private`"
 
+    summary_text = "ManipulateParameter summary still not available"
     rules = {
         # detect x and {x, default} and {x, default, label}.
         "System`Private`ManipulateParameter[{s_Symbol, r__}]": "System`Private`ManipulateParameter[{Symbol -> s, Label -> s}, {r}]",
@@ -280,6 +281,7 @@ class Manipulate(Builtin):
         hold_all | protected
     )  # we'll call ReleaseHold at the time of evaluation below
 
+    summary_text = "Manipulate summary still not available"
     messages = {
         "jupyter": "Manipulate[] only works inside a Jupyter notebook.",
         "imathics": "Your IMathics kernel does not seem to support all necessary operations. "

@@ -52,6 +52,8 @@ class ContinuedFraction(SympyFunction):
 
     attributes = listable | numeric_function | protected
 
+    summary_text = "ContinuedFraction summary still not available"
+
     def apply_1(self, x, evaluation):
         "%(name)s[x_]"
         return super().apply(x, evaluation)
@@ -91,6 +93,8 @@ class Divisors(Builtin):
     # e.g. Divisors[2, GaussianIntegers -> True]
 
     attributes = listable | protected
+
+    summary_text = "Divisors summary still not available"
 
     def apply(self, n, evaluation):
         "Divisors[n_Integer]"
@@ -161,6 +165,8 @@ class FactorInteger(Builtin):
 
     # TODO: GausianIntegers option
     # e.g. FactorInteger[5, GaussianIntegers -> True]
+
+    summary_text = "FactorInteger summary still not available"
 
     def apply(self, n, evaluation):
         "FactorInteger[n_]"
@@ -236,6 +242,8 @@ class FractionalPart(Builtin):
 
     attributes = listable | numeric_function | read_protected | protected
 
+    summary_text = "FractionalPart summary still not available"
+
     def apply(self, n, evaluation):
         "FractionalPart[n_]"
         expr = Expression("FractionalPart", n)
@@ -273,6 +281,8 @@ class FromContinuedFraction(SympyFunction):
     sympy_name = "continued_fraction_reduce"
 
     attributes = numeric_function | protected
+
+    summary_text = "FromContinuedFraction summary still not available"
 
     def apply_1(self, expr, evaluation):
         "%(name)s[expr_List]"
@@ -346,6 +356,7 @@ class MantissaExponent(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "MantissaExponent summary still not available"
     rules = {
         "MantissaExponent[0]": "{0, 0}",
         "MantissaExponent[0, n_]": "{0, 0}",
@@ -438,6 +449,7 @@ class NextPrime(Builtin):
      = NextPrime[5, 10.5]
     """
 
+    summary_text = "NextPrime summary still not available"
     rules = {
         "NextPrime[n_]": "NextPrime[n, 1]",
     }
@@ -476,6 +488,8 @@ class PartitionsP(SympyFunction):
     attributes = listable | numeric_function | orderless | protected
     sympy_name = "npartitions"
 
+    summary_text = "PartitionsP summary still not available"
+
     def apply(self, n, evaluation):
         "PartitionsP[n_Integer]"
         return super().apply(n, evaluation)
@@ -511,6 +525,8 @@ class Prime(SympyFunction):
     """
 
     attributes = listable | numeric_function | protected
+
+    summary_text = "Prime summary still not available"
 
     def apply(self, n, evaluation):
         "Prime[n_]"
@@ -552,6 +568,8 @@ class PrimePi(SympyFunction):
 
     # TODO: Traditional Form
 
+    summary_text = "PrimePi summary still not available"
+
     def apply(self, n, evaluation):
         "PrimePi[n_?NumericQ]"
         result = sympy.ntheory.primepi(n.to_python(n_evaluation=evaluation))
@@ -581,6 +599,7 @@ class PrimePowerQ(Builtin):
      = False
     """
 
+    summary_text = "PrimePowerQ summary still not available"
     rules = {
         "PrimePowerQ[1]": "False",
     }
@@ -649,6 +668,7 @@ class RandomPrime(Builtin):
      = {{2, 2}, {2, 2}, {2, 2}}
     """
 
+    summary_text = "RandomPrime summary still not available"
     messages = {
         "posdim": (
             "The dimensions parameter `1` is expected to be a positive "

@@ -198,6 +198,7 @@ class AnglePath(Builtin):
      = -Graphics-
     """
 
+    summary_text = "AnglePath summary still not available"
     messages = {"steps": "`1` is not a valid description of steps."}
 
     @staticmethod
@@ -340,6 +341,7 @@ class AngleVector(Builtin):
      = {1 + Cos[a], 10 + Sin[a]}
     """
 
+    summary_text = "AngleVector summary still not available"
     rules = {
         "AngleVector[phi_]": "{Cos[phi], Sin[phi]}",
         "AngleVector[{r_, phi_}]": "{r * Cos[phi], r * Sin[phi]}",
@@ -366,6 +368,7 @@ class ArcCos(_MPMathFunction):
     sympy_name = "acos"
     mpmath_name = "acos"
 
+    summary_text = "ArcCos summary still not available"
     rules = {
         "Derivative[1][ArcCos]": "-1/Sqrt[1-#^2]&",
         "ArcCos[0]": "Pi / 2",
@@ -394,6 +397,7 @@ class ArcCosh(_MPMathFunction):
     sympy_name = "acosh"
     mpmath_name = "acosh"
 
+    summary_text = "ArcCosh summary still not available"
     rules = {
         "Derivative[1][ArcCosh]": "1/(Sqrt[#-1]*Sqrt[#+1])&",
     }
@@ -415,6 +419,7 @@ class ArcCot(_MPMathFunction):
     sympy_name = "acot"
     mpmath_name = "acot"
 
+    summary_text = "ArcCot summary still not available"
     rules = {
         "Derivative[1][ArcCot]": "-1/(1+#^2)&",
         "ArcCot[0]": "Pi / 2",
@@ -445,6 +450,7 @@ class ArcCoth(_MPMathFunction):
     sympy_name = "acoth"
     mpmath_name = "acoth"
 
+    summary_text = "ArcCoth summary still not available"
     rules = {
         "ArcCoth[z:0.0]": "N[I / 2 Pi, Precision[1+z]]",
         "Derivative[1][ArcCoth]": "1/(1-#^2)&",
@@ -467,6 +473,7 @@ class ArcCsc(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "acsc"
 
+    summary_text = "ArcCsc summary still not available"
     rules = {
         "Derivative[1][ArcCsc]": "-1 / (Sqrt[1 - 1/#^2] * #^2)&",
         "ArcCsc[0]": "ComplexInfinity",
@@ -496,6 +503,7 @@ class ArcCsch(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "acsch"
 
+    summary_text = "ArcCsch summary still not available"
     rules = {
         "ArcCsch[0]": "ComplexInfinity",
         "ArcCsch[0.]": "ComplexInfinity",
@@ -525,6 +533,7 @@ class ArcSec(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "asec"
 
+    summary_text = "ArcSec summary still not available"
     rules = {
         "Derivative[1][ArcSec]": "1 / (Sqrt[1 - 1/#^2] * #^2)&",
         "ArcSec[0]": "ComplexInfinity",
@@ -556,6 +565,7 @@ class ArcSech(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "asech"
 
+    summary_text = "ArcSech summary still not available"
     rules = {
         "ArcSech[0]": "Infinity",
         "ArcSech[0.]": "Indeterminate",
@@ -585,6 +595,7 @@ class ArcSin(_MPMathFunction):
     sympy_name = "asin"
     mpmath_name = "asin"
 
+    summary_text = "ArcSin summary still not available"
     rules = {
         "Derivative[1][ArcSin]": "1/Sqrt[1-#^2]&",
         "ArcSin[0]": "0",
@@ -610,6 +621,7 @@ class ArcSinh(_MPMathFunction):
     sympy_name = "asinh"
     mpmath_name = "asinh"
 
+    summary_text = "ArcSinh summary still not available"
     rules = {
         "Derivative[1][ArcSinh]": "1/Sqrt[1+#^2]&",
     }
@@ -651,6 +663,7 @@ class ArcTan(_MPMathFunction):
     sympy_name = "atan"
     mpmath_name = "atan"
 
+    summary_text = "ArcTan summary still not available"
     rules = {
         "ArcTan[1]": "Pi/4",
         "ArcTan[0]": "0",
@@ -683,6 +696,7 @@ class ArcTanh(_MPMathFunction):
     mpmath_name = "atanh"
     numpy_name = "arctanh"
 
+    summary_text = "ArcTanh summary still not available"
     rules = {
         "Derivative[1][ArcTanh]": "1/(1-#^2)&",
     }
@@ -704,6 +718,7 @@ class Cos(_MPMathFunction):
 
     mpmath_name = "cos"
 
+    summary_text = "Cos summary still not available"
     rules = {
         "Cos[Pi]": "-1",
         "Cos[n_Integer * Pi]": "(-1)^n",
@@ -726,6 +741,7 @@ class Cosh(_MPMathFunction):
 
     mpmath_name = "cosh"
 
+    summary_text = "Cosh summary still not available"
     rules = {
         "Derivative[1][Cosh]": "Sinh[#]&",
     }
@@ -746,6 +762,7 @@ class Cot(_MPMathFunction):
 
     mpmath_name = "cot"
 
+    summary_text = "Cot summary still not available"
     rules = {
         "Derivative[1][Cot]": "-Csc[#]^2&",
         "Cot[0]": "ComplexInfinity",
@@ -765,6 +782,7 @@ class Coth(_MPMathFunction):
 
     mpmath_name = "coth"
 
+    summary_text = "Coth summary still not available"
     rules = {
         "Coth[0]": "ComplexInfinity",
         "Coth[0.]": "ComplexInfinity",
@@ -789,6 +807,7 @@ class Csc(_MPMathFunction):
 
     mpmath_name = "csc"
 
+    summary_text = "Csc summary still not available"
     rules = {
         "Derivative[1][Csc]": "-Cot[#] Csc[#]&",
         "Csc[0]": "ComplexInfinity",
@@ -815,6 +834,7 @@ class Csch(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "csch"
 
+    summary_text = "Csch summary still not available"
     rules = {
         "Csch[0]": "ComplexInfinity",
         "Csch[0.]": "ComplexInfinity",
@@ -849,6 +869,7 @@ class Exp(_MPMathFunction):
      = Overflow[]
     """
 
+    summary_text = "Exp summary still not available"
     rules = {
         "Exp[x_]": "E ^ x",
         "Derivative[1][Exp]": "Exp",
@@ -872,6 +893,7 @@ class Haversine(_MPMathFunction):
      = -1.15082 + 0.869405 I
     """
 
+    summary_text = "Haversine summary still not available"
     rules = {"Haversine[z_]": "Power[Sin[z/2], 2]"}
 
 
@@ -893,6 +915,7 @@ class InverseHaversine(_MPMathFunction):
      = 1.76459 + 2.33097 I
     """
 
+    summary_text = "InverseHaversine summary still not available"
     rules = {"InverseHaversine[z_]": "2 * ArcSin[Sqrt[z]]"}
 
 
@@ -930,6 +953,7 @@ class Log(_MPMathFunction):
     mpmath_name = "log"
     sympy_name = "log"
 
+    summary_text = "Log summary still not available"
     rules = {
         "Log[0.]": "Indeterminate",
         "Log[0]": "DirectedInfinity[-1]",
@@ -966,6 +990,7 @@ class Log2(Builtin):
 
     attributes = listable | numeric_function | protected
 
+    summary_text = "Log2 summary still not available"
     rules = {
         "Log2[x_]": "Log[2, x]",
     }
@@ -988,6 +1013,7 @@ class Log10(Builtin):
 
     attributes = listable | numeric_function | protected
 
+    summary_text = "Log10 summary still not available"
     rules = {
         "Log10[x_]": "Log[10, x]",
     }
@@ -1015,6 +1041,7 @@ class LogisticSigmoid(Builtin):
 
     attributes = listable | numeric_function | protected
 
+    summary_text = "LogisticSigmoid summary still not available"
     rules = {"LogisticSigmoid[z_?NumberQ]": "1 / (1 + Exp[-z])"}
 
 
@@ -1068,6 +1095,7 @@ class Sec(_MPMathFunction):
 
     mpmath_name = "sec"
 
+    summary_text = "Sec summary still not available"
     rules = {
         "Derivative[1][Sec]": "Sec[#] Tan[#]&",
         "Sec[0]": "1",
@@ -1094,6 +1122,7 @@ class Sech(_MPMathFunction):
     sympy_name = ""
     mpmath_name = "sech"
 
+    summary_text = "Sech summary still not available"
     rules = {
         "Derivative[1][Sech]": "-Sech[#1] Tanh[#1]&",
     }
@@ -1130,6 +1159,7 @@ class Sin(_MPMathFunction):
 
     mpmath_name = "sin"
 
+    summary_text = "Sin summary still not available"
     rules = {
         "Sin[Pi]": "0",
         "Sin[n_Integer*Pi]": "0",
@@ -1152,6 +1182,7 @@ class Sinh(_MPMathFunction):
 
     mpmath_name = "sinh"
 
+    summary_text = "Sinh summary still not available"
     rules = {
         "Derivative[1][Sinh]": "Cosh[#]&",
     }
@@ -1175,6 +1206,7 @@ class Tan(_MPMathFunction):
 
     mpmath_name = "tan"
 
+    summary_text = "Tan summary still not available"
     rules = {
         "Tan[(1/2) * Pi]": "ComplexInfinity",
         "Tan[0]": "0",
@@ -1195,6 +1227,7 @@ class Tanh(_MPMathFunction):
 
     mpmath_name = "tanh"
 
+    summary_text = "Tanh summary still not available"
     rules = {
         "Derivative[1][Tanh]": "Sech[#1]^2&",
     }

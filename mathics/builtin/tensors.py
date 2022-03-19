@@ -189,6 +189,8 @@ class DiagonalMatrix(Builtin):
      = DiagonalMatrix[a + b]
     """
 
+    summary_text = "DiagonalMatrix summary still not available"
+
     def apply(self, list, evaluation):
         "DiagonalMatrix[list_List]"
 
@@ -281,6 +283,7 @@ class IdentityMatrix(Builtin):
      = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}
     """
 
+    summary_text = "IdentityMatrix summary still not available"
     rules = {
         "IdentityMatrix[n_Integer]": "DiagonalMatrix[Table[1, {n}]]",
     }
@@ -459,6 +462,7 @@ class MatrixQ(Builtin):
      = True
     """
 
+    summary_text = "MatrixQ summary still not available"
     rules = {
         "MatrixQ[expr_]": "ArrayQ[expr, 2]",
         "MatrixQ[expr_, test_]": "ArrayQ[expr, 2, test]",
@@ -476,6 +480,7 @@ class RotationTransform(Builtin):
     </dl>
     """
 
+    summary_text = "RotationTransform summary still not available"
     rules = {
         "RotationTransform[phi_]": "TransformationFunction[{{Cos[phi], -Sin[phi], 0}, {Sin[phi], Cos[phi], 0}, {0, 0, 1}}]",
         "RotationTransform[phi_, p_]": "TranslationTransform[p] . RotationTransform[phi] . TranslationTransform[-p]",
@@ -493,6 +498,7 @@ class ScalingTransform(Builtin):
     </dl>
     """
 
+    summary_text = "ScalingTransform summary still not available"
     rules = {
         "ScalingTransform[v_]": "TransformationFunction[DiagonalMatrix[Join[v, {1}]]]",
         "ScalingTransform[v_, p_]": "TranslationTransform[p] . ScalingTransform[v] . TranslationTransform[-p]",
@@ -511,6 +517,7 @@ class ShearingTransform(Builtin):
     </dl>
     """
 
+    summary_text = "ShearingTransform summary still not available"
     rules = {
         "ShearingTransform[phi_, {1, 0}, {0, 1}]": "TransformationFunction[{{1, Tan[phi], 0}, {0, 1, 0}, {0, 0, 1}}]",
         "ShearingTransform[phi_, {0, 1}, {1, 0}]": "TransformationFunction[{{1, 0, 0}, {Tan[phi], 1, 0}, {0, 0, 1}}]",
@@ -532,6 +539,7 @@ class TransformationFunction(Builtin):
      = TransformationFunction[{{-1, 0, 1}, {0, -1, -1}, {0, 0, 1}}]
     """
 
+    summary_text = "TransformationFunction summary still not available"
     rules = {
         "Dot[TransformationFunction[a_], TransformationFunction[b_]]": "TransformationFunction[a . b]",
         "TransformationFunction[m_][v_]": "Take[m . Join[v, {1}], Length[v]]",
@@ -549,6 +557,7 @@ class TranslationTransform(Builtin):
      = TransformationFunction[{{1, 0, 1}, {0, 1, 2}, {0, 0, 1}}]
     """
 
+    summary_text = "TranslationTransform summary still not available"
     rules = {
         "TranslationTransform[v_]": "TransformationFunction[IdentityMatrix[Length[v] + 1] + "
         "(Join[ConstantArray[0, Length[v]], {#}]& /@ Join[v, {0}])]",

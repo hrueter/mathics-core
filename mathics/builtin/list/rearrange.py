@@ -239,6 +239,7 @@ class Catenate(Builtin):
      = {1, 2, 3, 4, 5}
     """
 
+    summary_text = "Catenate summary still not available"
     messages = {"invrp": "`1` is not a list."}
 
     def apply(self, lists, evaluation):
@@ -301,6 +302,8 @@ class Complement(_SetOperation):
     """
 
     _operation = "difference"
+
+    summary_text = "Complement summary still not available"
 
     def _elementwise(self, a, b, sameQ: Callable[..., bool]):
         for ea in a:
@@ -381,6 +384,7 @@ class GatherBy(_GatherOperation):
      = {{{{1, 2}, {2, 1}}}, {{{3, 5}}}, {{{5, 1}}, {{2, 2, 2}}}}
     """
 
+    summary_text = "GatherBy summary still not available"
     rules = {
         "GatherBy[l_]": "GatherBy[l, Identity]",
         "GatherBy[l_, {r__, f_}]": "Map[GatherBy[#, f]&, GatherBy[l, {r}], {Length[{r}]}]",
@@ -437,6 +441,8 @@ class Join(Builtin):
 
     attributes = flat | one_identity | protected
 
+    summary_text = "Join summary still not available"
+
     def apply(self, lists, evaluation):
         "Join[lists___]"
 
@@ -485,6 +491,7 @@ class Partition(Builtin):
      = {{{{11, 12}, {21, 22}}, {{12, 13}, {22, 23}}}, {{{21, 22}, {31, 32}}, {{22, 23}, {32, 33}}}}
     """
 
+    summary_text = "Partition summary still not available"
     rules = {
         "Parition[list_, n_, d_, k]": "Partition[list, n, d, {k, k}]",
     }
@@ -546,6 +553,7 @@ class Reverse(Builtin):
      = {{4, 3}, {2, 1}}
     """
 
+    summary_text = "Reverse summary still not available"
     messages = {
         "ilsmp": "Positive integer or list of positive integers expected at position 2 of ``."
     }
@@ -652,6 +660,8 @@ class Riffle(Builtin):
     #> Riffle[{}, {a,b}]
      = {}
     """
+
+    summary_text = "Riffle summary still not available"
 
     def apply(self, list, sep, evaluation):
         "Riffle[list_List, sep_]"
@@ -765,6 +775,8 @@ class Union(_SetOperation):
 
     _operation = "union"
 
+    summary_text = "Union summary still not available"
+
     def _elementwise(self, a, b, sameQ: Callable[..., bool]):
         for eb in b:
             yield eb
@@ -797,6 +809,8 @@ class Intersection(_SetOperation):
     """
 
     _operation = "intersection"
+
+    summary_text = "Intersection summary still not available"
 
     def _elementwise(self, a, b, sameQ: Callable[..., bool]):
         for ea in a:

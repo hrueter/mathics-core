@@ -25,6 +25,7 @@ class Correlation(Builtin):
      = 0.816421
     """
 
+    summary_text = "Correlation summary still not available"
     messages = {
         "shlen": "`` must contain at least two elements.",
         "vctmat": "`1` and `2` need to be of equal length.",
@@ -58,6 +59,7 @@ class Covariance(Builtin):
      = 0.025
     """
 
+    summary_text = "Covariance summary still not available"
     messages = {
         "shlen": "`` must contain at least two elements.",
         "vctmat": "`1` and `2` need to be of equal length.",
@@ -93,6 +95,7 @@ class Kurtosis(Builtin):  # see https://en.wikipedia.org/wiki/Kurtosis
      = 1.42098
     """
 
+    summary_text = "Kurtosis summary still not available"
     rules = {
         "Kurtosis[list_List]": "CentralMoment[list, 4] / (CentralMoment[list, 2] ^ 2)",
     }
@@ -110,6 +113,7 @@ class Skewness(Builtin):  # see https://en.wikipedia.org/wiki/Skewness
      = 0.407041
     """
 
+    summary_text = "Skewness summary still not available"
     rules = {
         "Skewness[list_List]": "CentralMoment[list, 3] / (CentralMoment[list, 2] ^ (3 / 2))",
     }
@@ -138,6 +142,7 @@ class StandardDeviation(_Rectangular):
      = {Sqrt[2], 5 Sqrt[2]}
     """
 
+    summary_text = "StandardDeviation summary still not available"
     messages = {
         "shlen": "`` must contain at least two elements.",
         "rectt": "Expected a rectangular array at position 1 in ``.",
@@ -183,6 +188,7 @@ class Variance(_Rectangular):
      = {9 / 2, 49 / 2, 9025 / 2}
     """
 
+    summary_text = "Variance summary still not available"
     messages = {
         "shlen": "`` must contain at least two elements.",
         "rectt": "Expected a rectangular array at position 1 in ``.",

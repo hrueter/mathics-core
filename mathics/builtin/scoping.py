@@ -107,6 +107,7 @@ class With(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "With summary still not available"
     messages = {
         "lvsym": (
             "Local variable specification contains `1`, "
@@ -165,6 +166,7 @@ class Block(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "Block summary still not available"
     messages = {
         "lvsym": (
             "Local variable specification contains `1`, "
@@ -202,6 +204,7 @@ class ModuleNumber(Predefined):
 
     name = "$ModuleNumber"
 
+    summary_text = "ModuleNumber summary still not available"
     messages = {
         "set": (
             "Cannot set $ModuleNumber to `1`; " "value must be a positive integer."
@@ -253,6 +256,7 @@ class Module(Builtin):
 
     attributes = hold_all | protected
 
+    summary_text = "Module summary still not available"
     messages = {
         "lvsym": (
             "Local variable specification contains `1`, "
@@ -358,6 +362,7 @@ class Unique(Predefined):
 
     seq_number = 1
 
+    summary_text = "Unique summary still not available"
     messages = {
         "usym": "`1` is not a symbol or a valid symbol name.",
         "argrx": "Unique called with `1` arguments; 0 or 1 argument are expected.",
@@ -444,6 +449,8 @@ class Contexts(Builtin):
     X> Contexts[] // InputForm
     """
 
+    summary_text = "Contexts summary still not available"
+
     def apply(self, evaluation):
         "Contexts[]"
 
@@ -476,6 +483,7 @@ class Context_(Predefined):
 
     name = "$Context"
 
+    summary_text = "Context_ summary still not available"
     messages = {"cxset": "`1` is not a valid context name ending in `."}
 
     rules = {
@@ -504,6 +512,7 @@ class ContextPath(Predefined):
 
     name = "$ContextPath"
 
+    summary_text = "ContextPath summary still not available"
     messages = {"cxlist": "`1` is not a list of valid context names ending in `."}
 
     rules = {
@@ -537,6 +546,7 @@ class Begin(Builtin):
      = Global`test`
     """
 
+    summary_text = "Begin summary still not available"
     rules = {
         "Begin[context_String]": """
              Unprotect[System`Private`$ContextStack];
@@ -556,6 +566,7 @@ class End(Builtin):
     </dl>
     """
 
+    summary_text = "End summary still not available"
     messages = {
         "noctx": "No previous context defined.",
     }
@@ -590,6 +601,7 @@ class BeginPackage(Builtin):
      = test`
     """
 
+    summary_text = "BeginPackage summary still not available"
     messages = {"unimpl": "The second argument to BeginPackage is not yet implemented."}
 
     rules = {
@@ -620,6 +632,7 @@ class EndPackage(Builtin):
     package\'s context prepended to $ContextPath.
     """
 
+    summary_text = "EndPackage summary still not available"
     messages = {
         "noctx": "No previous context defined.",
     }
@@ -652,6 +665,7 @@ class ContextStack(Builtin):
     context = "System`Private`"
     name = "$ContextStack"
 
+    summary_text = "ContextStack summary still not available"
     rules = {
         "System`Private`$ContextStack": "{}",
     }
@@ -669,6 +683,7 @@ class ContextPathStack(Builtin):
     context = "System`Private`"
     name = "$ContextPathStack"
 
+    summary_text = "ContextPathStack summary still not available"
     rules = {
         "System`Private`$ContextPathStack": "{}",
     }

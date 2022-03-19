@@ -240,6 +240,7 @@ class DirectedInfinity(SympyFunction):
      = Infinity
     """
 
+    summary_text = "DirectedInfinity summary still not available"
     rules = {
         "DirectedInfinity[Indeterminate]": "Indeterminate",
         "DirectedInfinity[args___] ^ -1": "0",
@@ -319,6 +320,8 @@ class Re(SympyFunction):
     attributes = listable | numeric_function | protected
     sympy_name = "re"
 
+    summary_text = "Re summary still not available"
+
     def apply_complex(self, number, evaluation):
         "Re[number_Complex]"
 
@@ -355,6 +358,8 @@ class Im(SympyFunction):
     """
 
     attributes = listable | numeric_function | protected
+
+    summary_text = "Im summary still not available"
 
     def apply_complex(self, number, evaluation):
         "Im[number_Complex]"
@@ -468,6 +473,7 @@ class Arg(_MPMathFunction):
      = 0
     """
 
+    summary_text = "Arg summary still not available"
     rules = {
         "Arg[0]": "0",
         "Arg[DirectedInfinity[]]": "1",
@@ -532,6 +538,7 @@ class Sign(SympyFunction):
 
     attributes = listable | numeric_function | protected
 
+    summary_text = "Sign summary still not available"
     messages = {
         "argx": "Sign called with `1` arguments; 1 argument is expected.",
     }
@@ -567,6 +574,8 @@ class I(Predefined):
 
     python_equivalent = 1j
 
+    summary_text = "I summary still not available"
+
     def evaluate(self, evaluation):
         return Complex(Integer0, Integer1)
 
@@ -585,6 +594,8 @@ class NumberQ(Test):
     >> NumberQ[Pi]
      = False
     """
+
+    summary_text = "NumberQ summary still not available"
 
     def test(self, expr):
         return isinstance(expr, Number)
@@ -630,6 +641,8 @@ class PossibleZeroQ(SympyFunction):
 
     sympy_name = "_iszero"
 
+    summary_text = "PossibleZeroQ summary still not available"
+
     def apply(self, expr, evaluation):
         "%(name)s[expr_]"
         from sympy.matrices.utilities import _iszero
@@ -674,6 +687,8 @@ class RealNumberQ(Test):
     >> RealNumberQ[0.0 * I]
      = True
     """
+
+    summary_text = "RealNumberQ summary still not available"
 
     def test(self, expr):
         return isinstance(expr, (Integer, Rational, Real))
@@ -791,6 +806,8 @@ class Rational_(Builtin):
 
     name = "Rational"
 
+    summary_text = "Rational_ summary still not available"
+
     def apply(self, n, m, evaluation):
         "%(name)s[n_Integer, m_Integer]"
 
@@ -857,6 +874,8 @@ class Complex_(Builtin):
     """
 
     name = "Complex"
+
+    summary_text = "Complex_ summary still not available"
 
     def apply(self, r, i, evaluation):
         "%(name)s[r_?NumberQ, i_?NumberQ]"
@@ -933,6 +952,7 @@ class Factorial2(PostfixOperator, _MPMathFunction):
     precedence = 610
     mpmath_name = "fac2"
     sympy_name = "factorial2"
+    summary_text = "Factorial2 summary still not available"
     messages = {
         "ndf": "`1` evaluation error: `2`.",
         "unknownp": "'`1`' not in ('Automatic', 'sympy', 'mpmath')",
@@ -1066,6 +1086,7 @@ class Sum(_IterationFunction, SympyFunction):
 
     sympy_name = "Sum"
 
+    summary_text = "Sum summary still not available"
     rules = _IterationFunction.rules.copy()
     rules.update(
         {
@@ -1178,6 +1199,7 @@ class Product(_IterationFunction, SympyFunction):
 
     sympy_name = "Product"
 
+    summary_text = "Product summary still not available"
     rules = _IterationFunction.rules.copy()
     rules.update(
         {
@@ -1245,6 +1267,8 @@ class Piecewise(SympyFunction):
     sympy_name = "Piecewise"
 
     attributes = hold_all | protected
+
+    summary_text = "Piecewise summary still not available"
 
     def apply(self, items, evaluation):
         "%(name)s[items__]"
@@ -1317,6 +1341,8 @@ class Boole(Builtin):
 
     attributes = listable | protected
 
+    summary_text = "Boole summary still not available"
+
     def apply(self, expr, evaluation):
         "%(name)s[expr_]"
         if expr is SymbolTrue:
@@ -1337,6 +1363,7 @@ class Assumptions(Predefined):
 
     name = "$Assumptions"
     attributes = no_attributes
+    summary_text = "Assumptions summary still not available"
     rules = {
         "$Assumptions": "True",
     }
@@ -1364,6 +1391,8 @@ class Assuming(Builtin):
     """
 
     attributes = hold_rest | protected
+
+    summary_text = "Assuming summary still not available"
 
     def apply_assuming(self, assumptions, expr, evaluation):
         "Assuming[assumptions_, expr_]"
@@ -1412,6 +1441,7 @@ class ConditionalExpression(Builtin):
 
     sympy_name = "Piecewise"
 
+    summary_text = "ConditionalExpression summary still not available"
     rules = {
         "ConditionalExpression[expr_, True]": "expr",
         "ConditionalExpression[expr_, False]": "Undefined",

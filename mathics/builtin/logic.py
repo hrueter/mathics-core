@@ -48,6 +48,8 @@ class Or(BinaryOperator):
     #        "Or[a_, a_]": "a",
     #        "Or[pred1___, a_, pred2___, a_, pred3___]": "Or[pred1, a, pred2, pred3]",
     #    }
+    summary_text = "Or summary still not available"
+
     def apply(self, args, evaluation):
         "Or[args___]"
 
@@ -97,6 +99,8 @@ class And(BinaryOperator):
     #        "And[pred1___, a_, pred2___, a_, pred3___]": "And[pred1, a, pred2, pred3]",
     #    }
 
+    summary_text = "And summary still not available"
+
     def apply(self, args, evaluation):
         "And[args___]"
 
@@ -136,6 +140,7 @@ class Not(PrefixOperator):
     operator = "!"
     precedence = 230
 
+    summary_text = "Not summary still not available"
     rules = {
         "Not[True]": "False",
         "Not[False]": "True",
@@ -155,6 +160,7 @@ class Nand(Builtin):
     """
 
     operator = "\u22BC"
+    summary_text = "Nand summary still not available"
     rules = {
         "Nand[expr___]": "Not[And[expr]]",
     }
@@ -172,6 +178,7 @@ class Nor(Builtin):
     """
 
     operator = "\u22BD"
+    summary_text = "Nor summary still not available"
     rules = {
         "Nor[expr___]": "Not[Or[expr]]",
     }
@@ -202,6 +209,8 @@ class Implies(BinaryOperator):
     operator = "\u21D2"
     precedence = 200
     grouping = "Right"
+
+    summary_text = "Implies summary still not available"
 
     def apply(self, x, y, evaluation):
         "Implies[x_, y_]"
@@ -244,6 +253,8 @@ class Equivalent(BinaryOperator):
     operator = "\u29E6"
     precedence = 205
     attributes = orderless | protected
+
+    summary_text = "Equivalent summary still not available"
 
     def apply(self, args, evaluation):
         "Equivalent[args___]"
@@ -303,6 +314,8 @@ class Xor(BinaryOperator):
     operator = "\u22BB"
     precedence = 215
     attributes = flat | one_identity | orderless | protected
+
+    summary_text = "Xor summary still not available"
 
     def apply(self, args, evaluation):
         "Xor[args___]"
@@ -413,6 +426,8 @@ class NoneTrue(_ManyTrue):
      = True
     """
 
+    summary_text = "NoneTrue summary still not available"
+
     def _short_circuit(self, what):
         if what:
             raise _ShortCircuit(SymbolFalse)
@@ -442,6 +457,8 @@ class AnyTrue(_ManyTrue):
      = False
     """
 
+    summary_text = "AnyTrue summary still not available"
+
     def _short_circuit(self, what):
         if what:
             raise _ShortCircuit(SymbolTrue)
@@ -470,6 +487,8 @@ class AllTrue(_ManyTrue):
     #> AllTrue[{}, EvenQ]
      = True
     """
+
+    summary_text = "AllTrue summary still not available"
 
     def _short_circuit(self, what):
         if not what:

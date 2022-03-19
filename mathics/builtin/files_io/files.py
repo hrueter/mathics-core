@@ -84,6 +84,8 @@ class Input(Predefined):
     attributes = protected | read_protected
     name = "$Input"
 
+    summary_text = "Input summary still not available"
+
     def evaluate(self, evaluation):
         global INPUT_VAR
         return String(INPUT_VAR)
@@ -101,6 +103,8 @@ class InputFileName(Predefined):
     """
 
     name = "$InputFileName"
+
+    summary_text = "InputFileName summary still not available"
 
     def evaluate(self, evaluation):
         global INPUTFILE_VAR
@@ -331,6 +335,7 @@ class Read(Builtin):
 
     """
 
+    summary_text = "Read summary still not available"
     messages = {
         "openx": "`1` is not open.",
         "readf": "`1` is not a valid format specification.",
@@ -587,6 +592,8 @@ class Write(Builtin):
      = {10 x + 15 y ^ 2, 3 Sin[z]}
     #> Close[stream];
     """
+
+    summary_text = "Write summary still not available"
 
     def apply(self, channel, expr, evaluation):
         "Write[channel_, expr___]"
@@ -1170,6 +1177,7 @@ class BinaryWrite(Builtin):
      = {148, 135, 230, 22, 136, 141, 234, 99}
     """
 
+    summary_text = "BinaryWrite summary still not available"
     messages = {
         "writex": "`1`.",
     }
@@ -1535,6 +1543,7 @@ class BinaryRead(Builtin):
 
     readers = _BinaryFormat.get_readers()
 
+    summary_text = "BinaryRead summary still not available"
     messages = {
         "format": "`1` is not a recognized binary format.",
         "openw": "`1` is open for output.",
@@ -1638,6 +1647,7 @@ class WriteString(Builtin):
 
     """
 
+    summary_text = "WriteString summary still not available"
     messages = {
         "strml": ("`1` is not a string, stream, " "or list of strings and streams."),
         "writex": "`1`.",
@@ -1878,6 +1888,7 @@ class Get(PrefixOperator):
 
     operator = "<<"
     precedence = 720
+    summary_text = "Get summary still not available"
     options = {
         "Trace": "False",
     }
@@ -1995,6 +2006,8 @@ class Put(BinaryOperator):
     operator = ">>"
     precedence = 30
 
+    summary_text = "Put summary still not available"
+
     def apply(self, exprs, filename, evaluation):
         "Put[exprs___, filename_String]"
         instream = Expression("OpenWrite", filename).evaluate(evaluation)
@@ -2084,6 +2097,8 @@ class PutAppend(BinaryOperator):
     operator = ">>>"
     precedence = 30
 
+    summary_text = "PutAppend summary still not available"
+
     def apply(self, exprs, filename, evaluation):
         "PutAppend[exprs___, filename_String]"
         instream = Expression("OpenAppend", filename).evaluate(evaluation)
@@ -2172,6 +2187,7 @@ class ReadList(Read):
      = {123, abc}
     """
 
+    summary_text = "ReadList summary still not available"
     rules = {
         "ReadList[stream_]": "ReadList[stream, Expression]",
     }
@@ -2264,6 +2280,7 @@ class FilePrint(Builtin):
      = FilePrint[]
     """
 
+    summary_text = "FilePrint summary still not available"
     messages = {
         "fstr": (
             "File specification `1` is not a string of " "one or more characters."
@@ -2352,6 +2369,7 @@ class Close(Builtin):
      = Close[OutputStream[...]]
     """
 
+    summary_text = "Close summary still not available"
     messages = {
         "closex": "`1`.",
     }
@@ -2391,6 +2409,8 @@ class StreamPosition(Builtin):
     >> StreamPosition[stream]
      = 7
     """
+
+    summary_text = "StreamPosition summary still not available"
 
     def apply_input(self, name, n, evaluation):
         "StreamPosition[InputStream[name_, n_]]"
@@ -2442,6 +2462,7 @@ class SetStreamPosition(Builtin):
      = ERROR_MESSAGE_HERE
     """
 
+    summary_text = "SetStreamPosition summary still not available"
     messages = {
         "int": "Integer expected at position 2 in `1`.",
         "stmrng": (
@@ -2520,6 +2541,7 @@ class Skip(Read):
     #> Close[stream];
     """
 
+    summary_text = "Skip summary still not available"
     rules = {
         "Skip[InputStream[name_, n_], types_]": "Skip[InputStream[name, n], types, 1]",
     }
@@ -2589,6 +2611,7 @@ class Find(Read):
      = ...
     """
 
+    summary_text = "Find summary still not available"
     options = {
         "AnchoredSearch": "False",
         "IgnoreCase": "False",
@@ -2687,6 +2710,8 @@ class StringToStream(Builtin):
      = String
     """
 
+    summary_text = "StringToStream summary still not available"
+
     def apply(self, string, evaluation):
         "StringToStream[string_]"
         pystring = string.to_python()[1:-1]
@@ -2718,6 +2743,8 @@ class Streams(Builtin):
     #> Streams["some_nonexistant_name"]
      = {}
     """
+
+    summary_text = "Streams summary still not available"
 
     def apply(self, evaluation):
         "Streams[]"

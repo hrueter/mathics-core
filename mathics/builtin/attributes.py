@@ -70,6 +70,8 @@ class Attributes(Builtin):
 
     attributes = hold_all | listable | protected
 
+    summary_text = "Attributes summary still not available"
+
     def apply(self, expr, evaluation):
         "Attributes[expr_]"
 
@@ -103,6 +105,7 @@ class SetAttributes(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "SetAttributes summary still not available"
     messages = {
         "unknownattr": f"`1` should be one of {', '.join(attribute_string_to_number.keys())}"
     }
@@ -155,6 +158,8 @@ class ClearAttributes(Builtin):
 
     attributes = hold_first | protected
 
+    summary_text = "ClearAttributes summary still not available"
+
     def apply(self, symbols, attributes, evaluation):
         "ClearAttributes[symbols_, attributes_]"
 
@@ -199,6 +204,7 @@ class Protect(Builtin):
     """
 
     attributes = hold_all | protected
+    summary_text = "Protect summary still not available"
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
@@ -254,6 +260,7 @@ class Unprotect(Builtin):
     """
 
     attributes = hold_all | protected
+    summary_text = "Unprotect summary still not available"
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
