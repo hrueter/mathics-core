@@ -42,6 +42,8 @@ class Binomial(_MPMathFunction):
      = Infinity
     """
 
+    summary_text = "Binomial summary still not available"
+    summary_text = "Binomial summary still not available"
     attributes = listable | numeric_function | protected
 
     nargs = 2

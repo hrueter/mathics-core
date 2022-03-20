@@ -1310,6 +1310,7 @@ class Span(BinaryOperator):
      = (1 ;; d) (a ;; b ;; c)
     """
 
+    summary_text = "span ranges"
     operator = ";;"
     precedence = 305
 

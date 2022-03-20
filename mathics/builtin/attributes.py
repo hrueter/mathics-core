@@ -204,7 +204,7 @@ class Protect(Builtin):
     """
 
     attributes = hold_all | protected
-    summary_text = "Protect summary still not available"
+    summary_text = "Set the attribute Protected."
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
@@ -260,7 +260,7 @@ class Unprotect(Builtin):
     """
 
     attributes = hold_all | protected
-    summary_text = "Unprotect summary still not available"
+    summary_text = "Unset the attribute Protected."
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
@@ -341,6 +341,8 @@ class Protected(Predefined):
      : Symbol p is locked.
     """
 
+    summary_text = "Attribute for symbols which cannot change their values."
+
 
 class ReadProtected(Predefined):
     """
@@ -360,6 +362,8 @@ class ReadProtected(Predefined):
     >> Definition[p]
      = Attributes[p] = {ReadProtected}
     """
+
+    summary_text = "Attribute for symbols which cannot be read."
 
 
 class Locked(Predefined):
@@ -386,6 +390,8 @@ class Locked(Predefined):
     >> lock = 3
      = 3
     """
+
+    summary_text = "attribute for symbols that are not allowed to be modified."
 
 
 class Flat(Predefined):
@@ -430,6 +436,8 @@ class Flat(Predefined):
      = $Aborted
     """
 
+    summary_text = "attribute for functions that must be flattened."
+
 
 class Orderless(Predefined):
     """<dl>
@@ -458,6 +466,8 @@ class Orderless(Predefined):
 
     """
 
+    summary_text = "Attribute for functions with results that does not depends on the order of their arguments."
+
 
 class OneIdentity(Predefined):
     """
@@ -475,6 +485,8 @@ class OneIdentity(Predefined):
     >> f[a]
      = f[a]
     """
+
+    summary_text = "Attribute specifying that a function behaves like the Identity in pattern matching"
 
 
 class SequenceHold(Predefined):
@@ -501,6 +513,8 @@ class SequenceHold(Predefined):
      = a + b
     """
 
+    summary_text = "attribute that prevents 'Sequence' objects from being spliced into a function's arguments."
+
 
 class HoldFirst(Predefined):
     """
@@ -513,6 +527,10 @@ class HoldFirst(Predefined):
     >> Attributes[Set]
      = {HoldFirst, Protected, SequenceHold}
     """
+
+    summary_text = (
+        "attribute specifying that the first argument should be left unevaluated."
+    )
 
 
 class HoldRest(Predefined):
@@ -527,6 +545,8 @@ class HoldRest(Predefined):
      = {HoldRest, Protected}
     """
 
+    summary_text = "attribute specifying that all but the first argument should be left unevaluated."
+
 
 class HoldAll(Predefined):
     """
@@ -539,6 +559,10 @@ class HoldAll(Predefined):
     >> Attributes[Function]
      = {HoldAll, Protected}
     """
+
+    summary_text = (
+        "attribute specifying that all the arguments should be left unevaluated."
+    )
 
 
 class HoldAllComplete(Predefined):
@@ -560,6 +584,8 @@ class HoldAllComplete(Predefined):
      = f[Sequence[a, b]]
     """
 
+    summary_text = "attribute specifying that all the arguments should be left unevaluated, even if includes sequences, or upvalues."
+
 
 class NHoldAll(Predefined):
     """
@@ -576,6 +602,8 @@ class NHoldAll(Predefined):
      = f[2, 3]
     """
 
+    summary_text = "Attribute that indicates that the arguments must not be evaluated in numerical evaluations."
+
 
 class NHoldFirst(Predefined):
     """
@@ -586,6 +614,8 @@ class NHoldFirst(Predefined):
     </dl>
     """
 
+    summary_text = "Attribute that indicates that the first argument must not be evaluated in numerical evaluations."
+
 
 class NHoldRest(Predefined):
     """
@@ -595,6 +625,8 @@ class NHoldRest(Predefined):
         of a function from numeric evaluation.
     </dl>
     """
+
+    summary_text = "Attribute that indicates that just the first  argument must be evaluated in numerical evaluations."
 
 
 class Listable(Predefined):
@@ -614,6 +646,10 @@ class Listable(Predefined):
      = {{6, 7}, {9, 10}}
     """
 
+    summary_text = (
+        "Attribute for functions that automatically thread over their arguments."
+    )
+
 
 class Constant(Predefined):
     """
@@ -632,6 +668,8 @@ class Constant(Predefined):
      : E is not a valid variable.
      = Solve[x + E == 0, E]
     """
+
+    summary_text = "Attribute that indicates that a symbol is a (numerical) constant."
 
 
 class NumericFunction(Predefined):
@@ -654,3 +692,5 @@ class NumericFunction(Predefined):
     >> NumericQ[a]=False; NumericQ[Sqrt[a]]
      = False
     """
+
+    summary_text = "Attribute that indicates that a symbol is a numerical function."

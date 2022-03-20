@@ -1033,6 +1033,7 @@ class Max(_MinMax):
      = x
     """
 
+    summary_text = "The smallest argument or the largest element of a list"
     sense = 1
 
 
@@ -1067,4 +1068,5 @@ class Min(_MinMax):
      = x
     """
 
+    summary_text = "The largest argument or the largest element of a list"
     sense = -1

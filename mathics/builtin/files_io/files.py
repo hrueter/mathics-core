@@ -119,6 +119,9 @@ class EndOfFile(Builtin):
     </dl>
     """
 
+    summary_text = "EndOfFile summary still not available"
+    pass
+
 
 # TODO: Improve docs for these Read[] arguments.
 class Byte(Builtin):
@@ -129,6 +132,9 @@ class Byte(Builtin):
     </dl>
     """
 
+    summary_text = "Byte summary still not available"
+    pass
+
 
 class Character(Builtin):
     """
@@ -137,6 +143,9 @@ class Character(Builtin):
       <dd>is a data type for 'Read'.
     </dl>
     """
+
+    summary_text = "Character summary still not available"
+    pass
 
 
 class Expression_(Builtin):
@@ -149,6 +158,7 @@ class Expression_(Builtin):
     For information about underlying data structure Expression (a kind of M-expression) that is central in evaluation, see: <url>https://mathics-development-guide.readthedocs.io/en/latest/extending/code-overview/ast.html</url>
     """
 
+    summary_text = "Expression_ summary still not available"
     name = "Expression"
 
 
@@ -160,6 +170,7 @@ class Number_(Builtin):
     </dl>
     """
 
+    summary_text = "Number_ summary still not available"
     name = "Number"
 
 
@@ -171,6 +182,9 @@ class Record(Builtin):
     </dl>
     """
 
+    summary_text = "Record summary still not available"
+    pass
+
 
 class Word(Builtin):
     """
@@ -179,6 +193,9 @@ class Word(Builtin):
       <dd>is a data type for 'Read'.
     </dl>
     """
+
+    summary_text = "Word summary still not available"
+    pass
 
 
 class Read(Builtin):
@@ -1803,6 +1820,7 @@ class OpenRead(_OpenAction):
     #> Close[%];
     """
 
+    summary_text = "Open a file in read-only mode"
     mode = "r"
     stream_type = "InputStream"
 
@@ -1823,6 +1841,7 @@ class OpenWrite(_OpenAction):
     #> Close[%];
     """
 
+    summary_text = "Open a file in read-write mode"
     mode = "w"
     stream_type = "OutputStream"
 
@@ -1846,6 +1865,7 @@ class OpenAppend(_OpenAction):
     #> DeleteFile["MathicsNonExampleFile"]
     """
 
+    summary_text = "Open a file for append"
     mode = "a"
     stream_type = "OutputStream"
 
@@ -2675,6 +2695,9 @@ class InputStream(Builtin):
      = String
     """
 
+    summary_text = "InputStream summary still not available"
+    pass
+
 
 class OutputStream(Builtin):
     """
@@ -2688,6 +2711,9 @@ class OutputStream(Builtin):
     >> Close[%]
      = ...
     """
+
+    summary_text = "OutputStream summary still not available"
+    pass
 
 
 class StringToStream(Builtin):

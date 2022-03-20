@@ -351,6 +351,8 @@ class True_(Predefined):
     </dl>
     """
 
+    summary_text = "True_ summary still not available"
+    summary_text = "True_ summary still not available"
     attributes = locked | protected
     name = "True"
 
@@ -363,6 +365,8 @@ class False_(Predefined):
     </dl>
     """
 
+    summary_text = "False_ summary still not available"
+    summary_text = "False_ summary still not available"
     attributes = locked | protected
     name = "False"
 

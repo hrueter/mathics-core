@@ -39,6 +39,8 @@ class Fibonacci(_MPMathFunction):
     """
 
     nargs = 1
+    summary_text = "Fibonacci summary still not available"
+    summary_text = "Fibonacci summary still not available"
     attributes = listable | numeric_function | protected | read_protected
     sympy_name = "fibonacci"
     mpmath_name = "fibonacci"

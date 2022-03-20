@@ -1138,6 +1138,8 @@ class Null(Predefined):
      = #<--#
     """
 
+    summary_text = "The implicit result of expressions that do not yield a result"
+
 
 class Depth(Builtin):
     """

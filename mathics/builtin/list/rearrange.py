@@ -336,6 +336,7 @@ class DeleteDuplicates(_GatherOperation):
      = {}
     """
 
+    summary_text = "Delete duplicated elements of a list"
     _bin = _DeleteDuplicatesBin
 
 
@@ -358,6 +359,7 @@ class Gather(_GatherOperation):
      = {{1 / 3, 1 / 3}, {1 / 9}}
     """
 
+    summary_text = "Gather equivalent elements in a list"
     _bin = _GatherBin
 
 
@@ -697,6 +699,7 @@ class RotateLeft(_Rotate):
      = {{f, d, e}, {i, g, h}, {c, a, b}}
     """
 
+    summary_text = "Rotate the elements of a list to the left"
     _sign = 1
 
 
@@ -723,6 +726,7 @@ class RotateRight(_Rotate):
      = {{h, i, g}, {b, c, a}, {e, f, d}}
     """
 
+    summary_text = "Rotate the elements of a list to the right"
     _sign = -1
 
 
@@ -744,6 +748,7 @@ class Tally(_GatherOperation):
      = {{b, 2}, {a, 3}, {d, 4}, {c, 1}}
     """
 
+    summary_text = "Count the number of ocurrences of elements in a list"
     _bin = _TallyBin
 
 

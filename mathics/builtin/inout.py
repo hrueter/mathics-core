@@ -732,6 +732,9 @@ class BoxData(Builtin):
     </dl>
     """
 
+    summary_text = "BoxData summary still not available"
+    pass
+
 
 class TextData(Builtin):
     """
@@ -741,6 +744,9 @@ class TextData(Builtin):
     cell.
     </dl>
     """
+
+    summary_text = "TextData summary still not available"
+    pass
 
 
 class Row(Builtin):
@@ -1177,6 +1183,7 @@ class Postfix(BinaryOperator):
      = Hold[f[e[d[c[b[a[x]]]]]]]
     """
 
+    summary_text = "Postfix operator"
     operator = "//"
     operator_display = None
     precedence = 70
@@ -1210,6 +1217,7 @@ class Prefix(BinaryOperator):
      = Hold[a[b[c[d[e[f[x]]]]]]]
     """
 
+    summary_text = "Prefix operator"
     operator = "@"
     operator_display = None
     precedence = 640
@@ -1250,6 +1258,9 @@ class Infix(Builtin):
      = ab
     """
 
+    summary_text = "Infix summary still not available"
+    pass
+
 
 class NonAssociative(Builtin):
     """
@@ -1259,6 +1270,9 @@ class NonAssociative(Builtin):
         non-associative operator.
     </dl>
     """
+
+    summary_text = "NonAssociative summary still not available"
+    pass
 
 
 class Left(Builtin):
@@ -1270,6 +1284,9 @@ class Left(Builtin):
     </dl>
     """
 
+    summary_text = "Left summary still not available"
+    pass
+
 
 class Right(Builtin):
     """
@@ -1280,6 +1297,9 @@ class Right(Builtin):
     </dl>
     """
 
+    summary_text = "Right summary still not available"
+    pass
+
 
 class Center(Builtin):
     """
@@ -1289,6 +1309,9 @@ class Center(Builtin):
         'TableForm' to specify a centered column.
     </dl>
     """
+
+    summary_text = "Center summary still not available"
+    pass
 
 
 class StringForm(Builtin):
@@ -2035,6 +2058,9 @@ class FullForm(Builtin):
      = "A string"
     """
 
+    summary_text = "FullForm summary still not available"
+    pass
+
 
 class StandardForm(Builtin):
     """
@@ -2053,6 +2079,9 @@ class StandardForm(Builtin):
     >> f'[x]
      = f'[x]
     """
+
+    summary_text = "StandardForm summary still not available"
+    pass
 
 
 class InputForm(Builtin):
@@ -2075,6 +2104,8 @@ class InputForm(Builtin):
     #> InputForm["\$"]
      = "\\$"
     """
+    summary_text = "InputForm summary still not available"
+    pass
 
 
 class OutputForm(Builtin):
@@ -2093,6 +2124,9 @@ class OutputForm(Builtin):
     >> OutputForm[Graphics[Rectangle[]]]
      = -Graphics-
     """
+
+    summary_text = "OutputForm summary still not available"
+    pass
 
 
 class MathMLForm(Builtin):
@@ -2259,7 +2293,16 @@ class TeXForm(Builtin):
 
 
 class Style(Builtin):
-    summary_text = "Style summary still not available"
+    """
+    <dl>
+    <dt>'Style[$expr$, $op$]'
+        <dd>displays with $expr$ formatted using the specified option settings.
+    <dt>'Style[$expr$, "style"]'
+        <dd>Uses the option settings for the specified style in the current notebook.
+    </dl>
+    """
+
+    summary_text = "Set the style to show an expression"
     options = {"ImageSizeMultipliers": "Automatic"}
 
     rules = {

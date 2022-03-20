@@ -19,7 +19,7 @@ from typing import List
 # a summary_text. In the future, we can set this to True
 # and raise an error if a new builtin is added without
 # this property or if do not fulfills some other conditions.
-RUN_SANITY_TEST = False
+RUN_SANITY_TEST = True
 
 
 # Get a list of files in this directory. We'll exclude from the start

@@ -45,6 +45,8 @@ class Aborted(Predefined):
     </dl>
     """
 
+    summary_text = "Value returned when an evaluation is aborted."
+
     name = "$Aborted"
 
 
@@ -121,6 +123,7 @@ class Failed(Predefined):
      = $Failed
     """
 
+    summary_text = "Value returned when an evaluation fails."
     name = "$Failed"
 
 
@@ -462,6 +465,7 @@ if have_psutil:
          = ...
         """
 
+        summary_text = "The total amount of physical memory."
         name = "$SystemMemory"
 
         def evaluate(self, evaluation) -> Integer:
@@ -482,6 +486,8 @@ if have_psutil:
         >> $SystemMemory > MemoryAvailable[] > MemoryInUse[]
          = True
         """
+
+        summary_text = "The amount of available physical memory."
 
         def apply(self, evaluation) -> Integer:
             """MemoryAvailable[]"""
@@ -504,6 +510,7 @@ else:
         """
 
         name = "$SystemMemory"
+        summary_text = "The total amount of physical memory."
 
         def evaluate(self, evaluation) -> Integer:
             return Integer(-1)
@@ -519,6 +526,8 @@ else:
         >> MemoryAvailable[]
          = -1
         """
+
+        summary_text = "The amount of available physical memory."
 
         def apply(self, evaluation) -> Integer:
             """MemoryAvailable[]"""
@@ -536,7 +545,7 @@ class MemoryInUse(Builtin):
      = ...
     """
 
-    summary_text = "MemoryInUse summary still not available"
+    summary_text = "The amount of memory used by the definitions object."
 
     def apply_0(self, evaluation) -> Integer:
         """MemoryInUse[]"""

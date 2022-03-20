@@ -19,6 +19,7 @@ class ExpIntegralE(_MPMathFunction):
      = 0.0375343
     """
 
+    summary_text = "The ExpIntegralE function"
     nargs = 2
     sympy_name = "expint"
     mpmath_name = "expint"
@@ -35,6 +36,7 @@ class ExpIntegralEi(_MPMathFunction):
      = 4.95423
     """
 
+    summary_text = "The ExpIntegralEi function"
     sympy_name = "Ei"
     mpmath_name = "ei"
 

@@ -14,6 +14,8 @@ class ButtonBox(Builtin):
     </dl>
     """
 
+    summary_text = "ButtonBox summary still not available"
+    summary_text = "ButtonBox summary still not available"
     attributes = protected | read_protected
 
 
@@ -26,6 +28,8 @@ class InterpretationBox(Builtin):
     </dl>
     """
 
+    summary_text = "InterpretationBox summary still not available"
+    summary_text = "InterpretationBox summary still not available"
     attributes = hold_all_complete | protected | read_protected
 
 
@@ -53,6 +57,9 @@ class RowBox(Builtin):
     </dl>
     """
 
+    summary_text = "RowBox summary still not available"
+    pass
+
 
 class StyleBox(Builtin):
     """
@@ -66,6 +73,7 @@ class StyleBox(Builtin):
     </dl>
     """
 
+    summary_text = "StyleBox summary still not available"
     attributes = protected | read_protected
 
 
@@ -78,6 +86,7 @@ class TagBox(Builtin):
     </dl>
     """
 
+    summary_text = "TagBox summary still not available"
     attributes = hold_all_complete | protected | read_protected
 
 
@@ -89,6 +98,7 @@ class TemplateBox(Builtin):
     </dl>
     """
 
+    summary_text = "TemplateBox summary still not available"
     attributes = hold_all_complete | protected | read_protected
 
 
@@ -99,3 +109,6 @@ class TooltipBox(Builtin):
         <dd>undocumented...
     </dl>
     """
+
+    summary_text = "TooltipBox summary still not available"
+    pass

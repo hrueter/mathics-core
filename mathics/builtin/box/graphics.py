@@ -347,12 +347,14 @@ class BezierCurveBox(_Polyline):
 class CircleBox(_ArcBox):
     """Boxing class attribute for a Circle."""
 
+    summary_text = "CircleBox summary still not available"
     face_element = False
 
 
 class DiskBox(_ArcBox):
     """Boxing class attribute for a Disk."""
 
+    summary_text = "DiskBox summary still not available"
     face_element = True
 
 

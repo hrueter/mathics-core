@@ -748,6 +748,9 @@ class RegularPolygon(Builtin):
     = -Graphics-
     """
 
+    summary_text = "RegularPolygon summary still not available"
+    pass
+
 
 class Arrow(Builtin):
     """
@@ -1327,6 +1330,8 @@ class GraphicsElements(_GraphicsElements):
 
 
 class Directive(Builtin):
+    summary_text = "Directive summary still not available"
+    summary_text = "Directive summary still not available"
     attributes = read_protected | protected
 
 
@@ -1338,6 +1343,9 @@ class Tiny(Builtin):
     </dl>
     """
 
+    summary_text = "Tiny summary still not available"
+    pass
+
 
 class Small(Builtin):
     """
@@ -1346,6 +1354,9 @@ class Small(Builtin):
         <dd>produces a small image.
     </dl>
     """
+
+    summary_text = "Small summary still not available"
+    pass
 
 
 class Medium(Builtin):
@@ -1356,6 +1367,9 @@ class Medium(Builtin):
     </dl>
     """
 
+    summary_text = "Medium summary still not available"
+    pass
+
 
 class Large(Builtin):
     """
@@ -1364,6 +1378,9 @@ class Large(Builtin):
         <dd>produces a large image.
     </dl>
     """
+
+    summary_text = "Large summary still not available"
+    pass
 
 
 element_heads = frozenset(

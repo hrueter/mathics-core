@@ -410,6 +410,9 @@ class NumberString(Builtin):
      = False
     """
 
+    summary_text = "NumberString summary still not available"
+    pass
+
 
 class Whitespace(Builtin):
     r"""
@@ -427,6 +430,8 @@ class Whitespace(Builtin):
     >> StringReplace[" this has leading and trailing whitespace \n ", (StartOfString ~~ Whitespace) | (Whitespace ~~ EndOfString) -> ""] <> " removed" // FullForm
      = "this has leading and trailing whitespace removed"
     """
+    summary_text = "Whitespace summary still not available"
+    pass
 
 
 # FIXME: Generalize string.lower() and ord()
@@ -601,6 +606,9 @@ class HexidecimalCharacter(Builtin):
      = {True, True, True, False, False, False, False}
     """
 
+    summary_text = "HexidecimalCharacter summary still not available"
+    pass
+
 
 class _StringFind(Builtin):
 
@@ -759,6 +767,8 @@ class String_(Builtin):
      = Plus[2, "abc"]
     """
 
+    summary_text = "String_ summary still not available"
+    summary_text = "String_ summary still not available"
     name = "String"
 
 

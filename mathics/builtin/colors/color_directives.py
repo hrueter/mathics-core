@@ -217,6 +217,7 @@ class CMYKColor(_Color):
      = -Graphics-
     """
 
+    summary_text = "CMYKColor representation of a color"
     color_space = "CMYK"
     components_sizes = [3, 4, 5]
     default_components = [0, 0, 0, 0, 1]
@@ -431,6 +432,7 @@ class GrayLevel(_Color):
     </dl>
     """
 
+    summary_text = "A color as a graylevel"
     color_space = "Grayscale"
     components_sizes = [1, 2]
     default_components = [0, 1]
@@ -502,6 +504,7 @@ class LABColor(_Color):
     </dl>
     """
 
+    summary_text = "LAB representation of a color"
     color_space = "LAB"
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]
@@ -516,6 +519,7 @@ class LCHColor(_Color):
     </dl>
     """
 
+    summary_text = "LCH representation of a color"
     color_space = "LCH"
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]
@@ -529,6 +533,7 @@ class LUVColor(_Color):
     </dl>
     """
 
+    summary_text = "LUV representation of a color"
     color_space = "LUV"
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]
@@ -556,7 +561,7 @@ class RGBColor(_Color):
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]
 
-    summary_text = "RGBColor summary still not available"
+    summary_text = "RGB represenation of a Color"
 
     def to_rgba(self):
         return self.components
@@ -570,6 +575,7 @@ class XYZColor(_Color):
     </dl>
     """
 
+    summary_text = "XYZ represenation of a Color"
     color_space = "XYZ"
     components_sizes = [3, 4]
     default_components = [0, 0, 0, 1]

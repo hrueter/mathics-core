@@ -248,6 +248,8 @@ class ImageAdd(_ImageArithmetic):
      = -Image-
     """
 
+    summary_text = "Add images"
+
 
 class ImageSubtract(_ImageArithmetic):
     """
@@ -271,6 +273,8 @@ class ImageSubtract(_ImageArithmetic):
      : Expecting a number, image, or graphics instead of x.
      = ImageSubtract[-Image-, x]
     """
+
+    summary_text = "Substract images"
 
 
 class ImageMultiply(_ImageArithmetic):
@@ -300,6 +304,8 @@ class ImageMultiply(_ImageArithmetic):
     >> ImageMultiply[noise, ein]
      = -Image-
     """
+
+    summary_text = "Multiply images"
 
 
 class RandomImage(_ImageBuiltin):
@@ -1145,6 +1151,9 @@ class Dilation(_MorphologyFilter):
      = -Image-
     """
 
+    summary_text = "Dilation of an image"
+    pass
+
 
 class Erosion(_MorphologyFilter):
     """
@@ -1157,6 +1166,8 @@ class Erosion(_MorphologyFilter):
     >> Erosion[ein, 2.5]
      = -Image-
     """
+
+    summary_text = "Erosion of an image"
 
 
 class Opening(_MorphologyFilter):
@@ -1171,6 +1182,9 @@ class Opening(_MorphologyFilter):
      = -Image-
     """
 
+    summary_text = "Opening of an image"
+    pass
+
 
 class Closing(_MorphologyFilter):
     """
@@ -1183,6 +1197,9 @@ class Closing(_MorphologyFilter):
     >> Closing[ein, 2.5]
      = -Image-
     """
+
+    summary_text = "Morphological clossing"
+    pass
 
 
 class MorphologicalComponents(_SkimageBuiltin):
@@ -2167,6 +2184,7 @@ if "Pyston" not in sys.version:
          = -Image-
         """
 
+        summary_text = "Word Cloud from a list of words"
         requires = _image_requires + ("wordcloud",)
 
         options = {

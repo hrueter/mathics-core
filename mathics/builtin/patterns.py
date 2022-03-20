@@ -92,6 +92,8 @@ class Rule_(BinaryOperator):
      = a
     """
 
+    summary_text = "Rule_ summary still not available"
+    summary_text = "Rule_ summary still not available"
     name = "Rule"
     operator = "->"
     precedence = 120

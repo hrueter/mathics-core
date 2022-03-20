@@ -643,6 +643,7 @@ class None_(Predefined):
     </dl>
     """
 
+    summary_text = "None is a possible value for Span and Quiet."
     name = "None"
 
 
@@ -1910,6 +1911,7 @@ class PadLeft(_Pad):
      = {{x, x}, {x, x}, {x, x}, {3, x}, {x, x}}
     """
 
+    summary_text = "Pad a list adding elements on the left upto a given size."
     _mode = -1
 
 
@@ -1945,6 +1947,7 @@ class PadRight(_Pad):
      = {{x, x}, {x, 1}, {x, x}, {x, x}, {x, x}}
     """
 
+    summary_text = "Pad a list adding elements on the right upto a given size."
     _mode = 1
 
 

@@ -404,6 +404,7 @@ class Conjugate(_MPMathFunction):
      = 1.5 - 2.5 I
     """
 
+    summary_text = "Complex conjugate value"
     mpmath_name = "conj"
 
 
@@ -433,6 +434,7 @@ class Abs(_MPMathFunction):
      = Sqrt[3]
     """
 
+    summary_text = "Absolute value"
     sympy_name = "Abs"
     mpmath_name = "fabs"  # mpmath actually uses python abs(x) / x.__abs__()
 
@@ -709,6 +711,8 @@ class Integer_(Builtin):
      = {False, True, True}
     """
 
+    summary_text = "Integer_ summary still not available"
+    summary_text = "Integer_ summary still not available"
     name = "Integer"
 
 
@@ -782,6 +786,8 @@ class Real_(Builtin):
      : Expression cannot begin with "37^^3" (line 1 of "<test>").
     """
 
+    summary_text = "Real_ summary still not available"
+    summary_text = "Real_ summary still not available"
     name = "Real"
 
 
@@ -916,6 +922,8 @@ class Factorial(PostfixOperator, _MPMathFunction):
      = 1
     """
 
+    summary_text = "Factorial summary still not available"
+    summary_text = "Factorial summary still not available"
     attributes = numeric_function | protected
 
     operator = "!"

@@ -105,6 +105,8 @@ class IOHookPreRead(Builtin):
     </dl>
     """
 
+    summary_text = "IOHookPreRead summary still not available"
+    summary_text = "IOHookPreRead summary still not available"
     name = "$PreRead"
     attributes = no_attributes
 
@@ -137,6 +139,8 @@ class IOHookPre(Builtin):
      = 4
     """
 
+    summary_text = "IOHookPre summary still not available"
+    summary_text = "IOHookPre summary still not available"
     name = "$Pre"
     attributes = no_attributes
 
@@ -150,6 +154,8 @@ class IOHookPost(Builtin):
     </dl>
     """
 
+    summary_text = "IOHookPost summary still not available"
+    summary_text = "IOHookPost summary still not available"
     name = "$Post"
     attributes = no_attributes
 
@@ -163,6 +169,8 @@ class IOHookPrePrint(Builtin):
     </dl>
     """
 
+    summary_text = "IOHookPrePrint summary still not available"
+    summary_text = "IOHookPrePrint summary still not available"
     name = "$PrePrint"
     attributes = no_attributes
 
@@ -177,6 +185,8 @@ class IOHookSyntaxHandler(Builtin):
     </dl>
     """
 
+    summary_text = "IOHookSyntaxHandler summary still not available"
+    summary_text = "IOHookSyntaxHandler summary still not available"
     name = "$SyntaxHandler"
     attributes = no_attributes
 
@@ -200,6 +210,8 @@ class Line(Builtin):
      : Non-negative integer expected.
     """
 
+    summary_text = "Line summary still not available"
+    summary_text = "Line summary still not available"
     name = "$Line"
 
 

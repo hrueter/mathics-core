@@ -154,6 +154,8 @@ class Hold(Builtin):
      = {HoldAll, Protected}
     """
 
+    summary_text = "Hold summary still not available"
+    summary_text = "Hold summary still not available"
     attributes = hold_all | protected
 
 
@@ -168,6 +170,8 @@ class HoldComplete(Builtin):
      = {HoldAllComplete, Protected}
     """
 
+    summary_text = "HoldComplete summary still not available"
+    summary_text = "HoldComplete summary still not available"
     attributes = hold_all_complete | protected
 
 
@@ -265,6 +269,8 @@ class Unevaluated(Builtin):
      = 15
     """
 
+    summary_text = "Unevaluated summary still not available"
+    summary_text = "Unevaluated summary still not available"
     attributes = hold_all_complete | protected
 
 
@@ -321,6 +327,9 @@ class Sequence(Builtin):
     >> Hold[{a, Sequence[b, c], d}]
      = Hold[{a, Sequence[b, c], d}]
     """
+
+    summary_text = "Sequence summary still not available"
+    pass
 
 
 class Quit(Builtin):

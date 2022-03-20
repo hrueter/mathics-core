@@ -53,6 +53,9 @@ class DigitCharacter(Builtin):
      = False
     """
 
+    summary_text = "DigitCharacter summary still not available"
+    pass
+
 
 class EndOfLine(Builtin):
     r"""
@@ -72,6 +75,8 @@ class EndOfLine(Builtin):
      . def,
      . hij}
     """
+    summary_text = "EndOfLine summary still not available"
+    pass
 
 
 class EndOfString(Builtin):
@@ -89,6 +94,8 @@ class EndOfString(Builtin):
      = aab
      . abc
     """
+    summary_text = "EndOfString summary still not available"
+    pass
 
 
 class LetterCharacter(Builtin):
@@ -105,6 +112,9 @@ class LetterCharacter(Builtin):
     >> StringMatchQ["\\[Lambda]", LetterCharacter]
      = True
     """
+
+    summary_text = "LetterCharacter summary still not available"
+    pass
 
 
 class StartOfLine(Builtin):
@@ -125,6 +135,8 @@ class StartOfLine(Builtin):
      . , def
      . , hij}
     """
+    summary_text = "StartOfLine summary still not available"
+    pass
 
 
 class StartOfString(Builtin):
@@ -142,6 +154,8 @@ class StartOfString(Builtin):
      = cba
      . abb
     """
+    summary_text = "StartOfString summary still not available"
+    pass
 
 
 class StringCases(_StringFind):
@@ -467,6 +481,8 @@ class WhitespaceCharacter(Builtin):
     >> StringMatchQ[" \n", Whitespace]
      = True
     """
+    summary_text = "WhitespaceCharacter summary still not available"
+    pass
 
 
 # strings.to_regex() seems to have the implementation here.
@@ -480,6 +496,9 @@ class WordBoundary(Builtin):
     >> StringReplace["apple banana orange artichoke", "e" ~~ WordBoundary -> "E"]
      = applE banana orangE artichokE
     """
+
+    summary_text = "WordBoundary summary still not available"
+    pass
 
 
 class WordCharacter(Builtin):
@@ -498,3 +517,5 @@ class WordCharacter(Builtin):
     >> StringMatchQ["$b;123", WordCharacter..]
      = False
     """
+    summary_text = "WordCharacter summary still not available"
+    pass

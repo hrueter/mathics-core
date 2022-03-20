@@ -662,6 +662,7 @@ class RandomChoice(_RandomSelection):
      = {b, b, b, b, b, b, b, b, b, b, b, c, b, b, b, b, b, b, b, b}
     """
 
+    summary_text = "Pick a random item from a list"
     _replace = True
 
 
@@ -707,6 +708,7 @@ class RandomSample(_RandomSelection):
      = {62, 98, 86, 78, 40}
     """
 
+    summary_text = "Pick a random items from a list"
     _replace = False
 
 

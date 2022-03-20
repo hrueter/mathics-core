@@ -31,6 +31,9 @@ class Automatic(Builtin):
      = {Background :> Automatic, Exclusions :> Automatic, ImageSize :> Automatic, MaxRecursion :> Automatic, PlotRange :> Automatic, PlotRangePadding :> Automatic}
     """
 
+    summary_text = "Automatic summary still not available"
+    pass
+
 
 class Axes(Builtin):
     """
@@ -49,6 +52,9 @@ class Axes(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Axes summary still not available"
+    pass
+
 
 class Axis(Builtin):
     """
@@ -60,6 +66,9 @@ class Axis(Builtin):
     >> ListLinePlot[Table[Sin[x], {x, -5, 5, 0.2}], Filling->Axis]
      = -Graphics-
     """
+
+    summary_text = "Axis summary still not available"
+    pass
 
 
 class Bottom(Builtin):
@@ -73,6 +82,9 @@ class Bottom(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Bottom summary still not available"
+    pass
+
 
 class ChartLabels(Builtin):
     """
@@ -85,6 +97,9 @@ class ChartLabels(Builtin):
      = -Graphics-
     """
 
+    summary_text = "ChartLabels summary still not available"
+    pass
+
 
 class ChartLegends(Builtin):
     """
@@ -93,6 +108,9 @@ class ChartLegends(Builtin):
       <dd>is a charting option.
     </dl>
     """
+
+    summary_text = "ChartLegends summary still not available"
+    pass
 
 
 class Filling(Builtin):
@@ -106,6 +124,9 @@ class Filling(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Filling summary still not available"
+    pass
+
 
 class Full(Builtin):
     """
@@ -114,6 +135,9 @@ class Full(Builtin):
       <dd>is a possible value for the 'Mesh' and 'PlotRange' options.
     </dl>
     """
+
+    summary_text = "Full summary still not available"
+    pass
 
 
 class ImageSize(Builtin):
@@ -136,6 +160,9 @@ class ImageSize(Builtin):
      = -Graphics-
     """
 
+    summary_text = "ImageSize summary still not available"
+    pass
+
 
 class Joined(Builtin):
     """
@@ -148,6 +175,9 @@ class Joined(Builtin):
      = -Graphics-
     """
 
+    summary_text = "Joined summary still not available"
+    pass
+
 
 class MaxRecursion(Builtin):
     """
@@ -159,6 +189,9 @@ class MaxRecursion(Builtin):
     >> NIntegrate[Exp[-10^8 x^2], {x, -1, 1}, MaxRecursion -> 10]
      =  1.97519*^-207
     """
+
+    summary_text = "MaxRecursion summary still not available"
+    pass
 
 
 class Mesh(Builtin):
@@ -185,6 +218,7 @@ class Mesh(Builtin):
     messages = {
         "ilevels": "`1` is not a valid mesh specification.",
     }
+    pass
 
 
 class PlotPoints(Builtin):
@@ -197,6 +231,9 @@ class PlotPoints(Builtin):
     >> Plot[Sin[Cos[x^2]],{x,-4,4}, PlotPoints->22]
      = -Graphics-
     """
+
+    summary_text = "PlotPoints summary still not available"
+    pass
 
 
 class PlotRange(Builtin):
@@ -220,6 +257,9 @@ class PlotRange(Builtin):
      = -Graphics-
     """
 
+    summary_text = "PlotRange summary still not available"
+    pass
+
 
 class TicksStyle(Builtin):
     """
@@ -238,6 +278,9 @@ class TicksStyle(Builtin):
      = -Graphics-
     """
 
+    summary_text = "TicksStyle summary still not available"
+    pass
+
 
 class Top(Builtin):
     """
@@ -249,3 +292,6 @@ class Top(Builtin):
     >> ListLinePlot[Table[Sin[x], {x, -5, 5, 0.2}], Filling->Axis|Top|Bottom]
      = -Graphics-
     """
+
+    summary_text = "Top summary still not available"
+    pass

@@ -259,6 +259,7 @@ class DataImport(_DataImport):
      = 3
     """
 
+    summary_text = "Contains the data imported from an HTML"
     full_data = False
     tag_name = "Data"
 
@@ -266,6 +267,7 @@ class DataImport(_DataImport):
 class FullDataImport(_DataImport):
     full_data = True
     tag_name = "FullData"
+    summary_text = "Contains the data imported from an HTML"
 
 
 class _LinksImport(_TagImport):
