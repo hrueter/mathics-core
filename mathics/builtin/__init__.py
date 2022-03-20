@@ -40,15 +40,7 @@ from mathics.builtin.base import (
 def sanity_check(cls, module):
     if not RUN_SANITY_TEST:
         return True
-
-    if not hasattr(cls, "summary_text"):
-        print(
-            "In ",
-            module.__name__,
-            var.__name__,
-            " does not have a summary_text.",
-        )
-        return False
+    ## Add a sanity check here...
     return True
 
 
@@ -221,9 +213,10 @@ for module in modules:
                 # This set the default context for symbols in mathics.builtins
                 if not type(instance).context:
                     type(instance).context = "System`"
-                assert sanity_check(
-                    var, module
-                ), f"In {module.__name__} Builtin <<{var.__name__}>> did not pass the sanity check."
+
+                # assert sanity_check(
+                #    var, module
+                # ), f"In {module.__name__} Builtin <<{var.__name__}>> did not pass the sanity check."
 
                 _builtins.append((instance.get_name(), instance))
                 builtins_by_module[module.__name__].append(instance)
