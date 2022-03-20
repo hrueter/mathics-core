@@ -712,7 +712,6 @@ class Integer_(Builtin):
     """
 
     summary_text = "Integer_ summary still not available"
-    summary_text = "Integer_ summary still not available"
     name = "Integer"
 
 
@@ -786,7 +785,6 @@ class Real_(Builtin):
      : Expression cannot begin with "37^^3" (line 1 of "<test>").
     """
 
-    summary_text = "Real_ summary still not available"
     summary_text = "Real_ summary still not available"
     name = "Real"
 
@@ -922,7 +920,6 @@ class Factorial(PostfixOperator, _MPMathFunction):
      = 1
     """
 
-    summary_text = "Factorial summary still not available"
     summary_text = "Factorial summary still not available"
     attributes = numeric_function | protected
 
