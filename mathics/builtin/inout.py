@@ -2210,7 +2210,7 @@ class PythonForm(Builtin):
         try:
             # from trepan.api import debug; debug()
             python_equivalent = expr.to_python(python_form=True)
-        except:
+        except Exception:
             return
         return StringFromPython(python_equivalent)
 
@@ -2241,7 +2241,7 @@ class SympyForm(Builtin):
         try:
             # from trepan.api import debug; debug()
             sympy_equivalent = expr.to_sympy()
-        except:
+        except Exception:
             return
         return StringFromPython(sympy_equivalent)
 

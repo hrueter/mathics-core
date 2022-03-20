@@ -46,6 +46,7 @@ from mathics.core.symbols import SymbolList
 
 from mathics.core.attributes import hold_all, protected, read_protected
 
+
 # Note: has to come before _ArcBox
 class _RoundBox(_GraphicsElement):
     face_element = None
@@ -655,7 +656,7 @@ class GraphicsBox(BoxConstruct):
         # template = '<mtext width="%dpx" height="%dpx"><img width="%dpx" height="%dpx" src="data:image/svg+xml;base64,%s"/></mtext>'
         template = (
             '<mglyph width="%dpx" height="%dpx" src="data:image/svg+xml;base64,%s"/>'
-            #'<mglyph  src="data:image/svg+xml;base64,%s"/>'
+            # '<mglyph  src="data:image/svg+xml;base64,%s"/>'
         )
         # print(svg_body)
         mathml = template % (

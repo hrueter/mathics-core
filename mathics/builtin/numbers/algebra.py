@@ -407,18 +407,18 @@ class Simplify(Builtin):
     >> Simplify[f[x]]
      = f[x]
 
-    Simplify over conditional expressions uses $\$Assumptions$, or $assump$
+    Simplify over conditional expressions uses '$Assumptions', or 'assump'
     to evaluate the condition:
     >> $Assumptions={a <= 0};
     >> Simplify[ConditionalExpression[1, a > 0]]
      = Undefined
-    The $assump$ option  override $\$Assumption$:
+    The 'assump' option  override '$Assumption':
     >> Simplify[ConditionalExpression[1, a > 0] ConditionalExpression[1, b > 0], { b > 0 }]
      = ConditionalExpression[1, a > 0]
-    On the other hand, $Assumptions$ option does not override $\$Assumption$, but add to them:
+    On the other hand, '$Assumptions option does not override '$Assumption', but add to them:
     >> Simplify[ConditionalExpression[1, a > 0] ConditionalExpression[1, b > 0], Assumptions -> { b > 0 }]
      = Undefined
-    Passing both options overwrites $Assumptions with the union of $assump$ the option
+    Passing both options overwrites '$Assumptions' with the union of 'assump' the option
     >> Simplify[ConditionalExpression[1, a > 0] ConditionalExpression[1, b > 0], {a>0},Assumptions -> { b > 0 }]
      = 1
     >> $Assumptions={};

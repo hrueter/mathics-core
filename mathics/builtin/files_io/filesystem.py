@@ -311,7 +311,7 @@ class CreateFile(Builtin):
                 return String(res)
             else:
                 return filename
-        except:
+        except Exception:
             return SymbolFailed
 
 
@@ -329,7 +329,7 @@ class CreateTemporary(Builtin):
         "CreateTemporary[]"
         try:
             res = create_temporary_file()
-        except:
+        except Exception:
             return SymbolFailed
         return String(res)
 
@@ -2022,7 +2022,7 @@ class SetDirectory(Builtin):
 
         try:
             os.chdir(py_path)
-        except:
+        except Exception:
             return SymbolFailed
 
         DIRECTORY_STACK.append(os.getcwd())

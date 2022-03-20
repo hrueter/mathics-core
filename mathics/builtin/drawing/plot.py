@@ -257,7 +257,7 @@ def compile_quiet_function(expr, arg_names, evaluation, expect_list):
                     result = cfunc(*args)
                     if not (isnan(result) or isinf(result)):
                         return result
-                except:
+                except Exception:
                     pass
                 return None
 

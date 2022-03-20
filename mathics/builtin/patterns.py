@@ -1753,7 +1753,7 @@ class DispatchAtom(AtomBuiltin):
                 return
         try:
             return Dispatch(flatten_list, evaluation)
-        except:
+        except Exception:
             return
 
     def apply_normal(self, dispatch, evaluation):

@@ -18,6 +18,7 @@ from itertools import chain
 from mathics.builtin.base import Builtin
 from mathics.core.expression import Expression
 from mathics.core.atoms import (
+    from_python,
     Real,
     Integer,
     Integer0,
