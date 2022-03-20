@@ -189,7 +189,7 @@ class Protect(Builtin):
     """
     <dl>
       <dt>'Protect'[$s1$, $s2$, ...]
-      <dd>sets the attribute 'Protected' for the symbols $si$.
+      <dd>add the attribute 'Protected' for the symbols $si$.
 
       <dt>'Protect'[$str1$, $str2$, ...]
       <dd>protects all symbols whose names textually match $stri$.
@@ -204,7 +204,7 @@ class Protect(Builtin):
     """
 
     attributes = hold_all | protected
-    summary_text = "Set the attribute Protected."
+    summary_text = "add the attribute Protected."
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
@@ -260,7 +260,7 @@ class Unprotect(Builtin):
     """
 
     attributes = hold_all | protected
-    summary_text = "Unset the attribute Protected."
+    summary_text = "remove the attribute Protected."
     messages = {
         "ssym": "`1` is not a symbol or a string.",
     }
